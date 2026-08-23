@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học HSK — Bài học</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="lessons">
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">学</div>
+      <div class="brand-text"><strong>Học HSK</strong><span>TỰ HỌC TIẾNG TRUNG</span></div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-page="home"><span class="ic">⌂</span> Trang chủ</a>
+      <a href="phonetics.html" data-page="phonetics"><span class="ic">音</span> Ngữ âm cơ bản</a>
+      <a href="measures.html" data-page="measures"><span class="ic">量</span> Lượng từ</a>
+      <a href="lessons.html" data-page="lessons"><span class="ic">课</span> Bài học</a>
+      <a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span> Flashcard</a>
+      <a href="quiz.html" data-page="quiz"><span class="ic">?</span> Trắc nghiệm</a>
+      <a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span> Gõ Pinyin</a>
+      <a href="writing.html" data-page="writing"><span class="ic">✎</span> Luyện viết</a>
+      <a href="progress.html" data-page="progress"><span class="ic">◔</span> Tiến độ</a>
+    </nav>
+    <div class="sidebar-foot"><a href="lessons.html" style="color:var(--seal); font-weight:700; text-decoration:none;">← Quay lại danh sách bài học</a></div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head" id="pageHead">
+      <div>
+        <span class="eyebrow" id="lessonEyebrow">Bài học</span>
+        <h1 id="lessonTitle">Đang tải…</h1>
+        <p class="sub" id="lessonSub"></p>
+      </div>
+    </div>
+
+    <div class="lesson-tabs">
+      <button class="lesson-tab active" data-tab="vocab">生词 Từ mới</button>
+      <button class="lesson-tab" data-tab="dialogue">课文 Hội thoại</button>
+      <button class="lesson-tab" data-tab="exercise">练习 Bài tập</button>
+    </div>
+
+    <div id="tab-vocab" class="tab-panel">
+      <div class="lword-grid" id="vocabGrid"></div>
+      <div style="margin-top:24px; text-align:center;">
+        <a href="#" id="flashcardLink" class="btn btn-primary">Luyện Flashcard riêng bài này →</a>
+      </div>
+    </div>
+
+    <div id="tab-dialogue" class="tab-panel" style="display:none;">
+      <div style="text-align:center; margin-bottom:20px;">
+        <button class="btn btn-outline" id="playAllBtn">🔊 Nghe toàn bộ hội thoại</button>
+      </div>
+      <div class="dialogue-list" id="dialogueList"></div>
+    </div>
+
+    <div id="tab-exercise" class="tab-panel" style="display:none;">
+      <div id="exSetup">
+        <div class="card pad-lg" style="max-width:480px; margin:0 auto;">
+          <h3 style="font-size:17px;">Bài tập của bài học</h3>
+          <p>Gồm câu hỏi chọn nghĩa và điền từ vào hội thoại. Làm xong xem kết quả ngay.</p>
+          <button class="btn btn-primary btn-lg btn-block" id="exStartBtn">Bắt đầu làm bài</button>
+        </div>
+      </div>
+      <div id="exQuizView" class="quiz-wrap" style="display:none;">
+        <div class="flash-progress" style="margin-bottom:18px;">
+          <span id="exProgText">1 / 7</span>
+          <div class="track"><div class="fill" id="exProgFill" style="width:0%"></div></div>
+          <span class="pill" id="exScorePill">0 đúng</span>
+        </div>
+        <div id="exQuestionArea"></div>
+      </div>
+      <div id="exResultView" class="quiz-wrap" style="display:none;">
+        <div class="card quiz-result">
+          <div class="eyebrow" style="text-align:center;">Hoàn thành bài tập</div>
+          <div class="score" id="exResultScore">0/7</div>
+          <p id="exResultMsg" style="margin-top:10px;"></p>
+          <div style="display:flex; gap:10px; margin-top:20px;">
+            <button class="btn btn-outline btn-block" id="exRetryBtn">Làm lại</button>
+            <a href="lessons.html" class="btn btn-primary btn-block">Bài học khác</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-pager" id="lessonPager"></div>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <ul>
+    <li><a href="index.html" data-page="home"><span class="ic">⌂</span>Trang chủ</a></li>
+    <li><a href="phonetics.html" data-page="phonetics"><span class="ic">音</span>Ngữ âm</a></li>
+    <li><a href="measures.html" data-page="measures"><span class="ic">量</span>Lượng từ</a></li>
+    <li><a href="lessons.html" data-page="lessons"><span class="ic">课</span>Bài học</a></li>
+    <li><a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span>Flashcard</a></li>
+    <li><a href="quiz.html" data-page="quiz"><span class="ic">?</span>Trắc nghiệm</a></li>
+    <li><a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span>Pinyin</a></li>
+    <li><a href="writing.html" data-page="writing"><span class="ic">✎</span>Luyện viết</a></li>
+    <li><a href="progress.html" data-page="progress"><span class="ic">◔</span>Tiến độ</a></li>
+  </ul>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+let vocab, lesson, allLessons = [], exQuestions = [], exIdx = 0, exScore = 0, exAnswered = false;
+
+const params = new URLSearchParams(location.search);
+const lessonId = params.get('id');
+
+async function loadData() {
+  const [vocabRes, lessonsRes] = await Promise.all([
+    fetch('data/vocab.json').then(r => r.json()),
+    fetch('data/lessons.json').then(r => r.json())
+  ]);
+  vocab = vocabRes;
+  allLessons = lessonsRes.lessons;
+  lesson = allLessons.find(l => l.id === lessonId) || allLessons[0];
+}
+
+function wordByHanzi(hanzi) {
+  return allWords(vocab).find(w => w.hanzi === hanzi);
+}
+
+function renderPager() {
+  // điều hướng theo đúng thứ tự bài trong cùng một cấp độ
+  const siblings = allLessons.filter(l => l.level === lesson.level);
+  const pos = siblings.findIndex(l => l.id === lesson.id);
+  const prev = pos > 0 ? siblings[pos - 1] : null;
+  const next = pos >= 0 && pos < siblings.length - 1 ? siblings[pos + 1] : null;
+
+  const prevHTML = prev ? `
+    <a class="pager-link prev" href="lesson.html?id=${prev.id}">
+      <span class="pager-label">← Bài trước</span>
+      <span class="pager-title">${prev.icon} Bài ${prev.number}: ${prev.title_vi}</span>
+    </a>` : `<div class="pager-placeholder"></div>`;
+
+  const nextHTML = next ? `
+    <a class="pager-link next" href="lesson.html?id=${next.id}">
+      <span class="pager-label">Bài sau →</span>
+      <span class="pager-title">${next.icon} Bài ${next.number}: ${next.title_vi}</span>
+    </a>` : `
+    <a class="pager-link next" href="lessons.html">
+      <span class="pager-label">Hoàn thành</span>
+      <span class="pager-title">Xem tất cả bài học →</span>
+    </a>`;
+
+  document.getElementById('lessonPager').innerHTML = prevHTML + nextHTML;
+}
+
+function renderHeader() {
+  document.title = `Học HSK — Bài ${lesson.number}: ${lesson.title_vi}`;
+  document.getElementById('lessonEyebrow').textContent = `${LEVEL_LABEL[lesson.level] || ''} · Bài ${lesson.number}`;
+  document.getElementById('lessonTitle').textContent = `${lesson.icon} ${lesson.title_vi}`;
+  document.getElementById('lessonSub').textContent = `${lesson.title_cn} — ${lesson.vocab.length} từ mới, ${lesson.dialogue.length} câu hội thoại`;
+  document.getElementById('flashcardLink').href = `flashcards.html?lesson=${lesson.id}`;
+}
+
+function renderVocab() {
+  const words = resolveLessonVocab(lesson, vocab);
+  document.getElementById('vocabGrid').innerHTML = words.map(w => `
+      <div class="lword-card">
+        <div class="hz">${w.hanzi}</div>
+        <div class="py">${w.pinyin}</div>
+        <div class="mn">${shortMeaning(w.meaning, 30)}</div>
+        <button class="speak-btn" data-speak="${w.hanzi}" title="Nghe">🔊</button>
+      </div>`
+  ).join('');
+  document.querySelectorAll('#vocabGrid [data-speak]').forEach(btn => {
+    btn.addEventListener('click', () => speakChinese(btn.dataset.speak));
+  });
+}
+
+function renderDialogue() {
+  document.getElementById('dialogueList').innerHTML = lesson.dialogue.map((line, i) => `
+    <div class="dialogue-line speaker${line.speaker}">
+      <div class="avatar">${line.speaker}</div>
+      <div class="dialogue-bubble">
+        <div class="cn">${line.cn}</div>
+        <div class="py">${line.py}</div>
+        <div class="vi">${line.vi}</div>
+        <button class="speak-btn" data-speak-line="${i}" title="Nghe">🔊</button>
+      </div>
+    </div>
+  `).join('');
+  document.querySelectorAll('#dialogueList [data-speak-line]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const line = lesson.dialogue[btn.dataset.speakLine];
+      speakChinese(line.cn, 0.8);
+    });
+  });
+}
+
+async function playAllDialogue() {
+  for (const line of lesson.dialogue) {
+    speakChinese(line.cn, 0.8);
+    // đợi ước lượng thời gian đọc xong trước khi sang câu tiếp theo
+    await new Promise(res => setTimeout(res, Math.max(1200, line.cn.length * 380)));
+  }
+}
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.lesson-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lesson-tab').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+    document.getElementById(`tab-${btn.dataset.tab}`).style.display = 'block';
+  });
+});
+document.getElementById('playAllBtn').addEventListener('click', playAllDialogue);
+
+/* ---------- Exercises ---------- */
+function buildExercises() {
+  const lessonWords = resolveLessonVocab(lesson, vocab);
+  const isHskLesson = ['hsk1', 'hsk2', 'hsk3'].includes(lesson.level);
+  // Với bài HSK: lấy từ nhiễu từ toàn bộ kho từ HSK cho đa dạng.
+  // Với bài chuyên ngành: lấy từ nhiễu trong chính bộ từ của bài để giữ đúng bối cảnh.
+  const distractorPool = isHskLesson ? allWords(vocab) : lessonWords;
+
+  const mcWords = pick(lessonWords, Math.min(4, lessonWords.length));
+  const mcQuestions = mcWords.map(w => {
+    const pool = distractorPool.filter(x => x.hanzi !== w.hanzi);
+    const distractors = pick(pool, Math.min(3, pool.length)).map(d => shortMeaning(d.meaning));
+    const options = shuffle([shortMeaning(w.meaning), ...distractors]);
+    return {
+      type: 'mc',
+      hanzi: w.hanzi, pinyin: w.pinyin,
+      options, answer: shortMeaning(w.meaning)
+    };
+  });
+  const fillQuestions = (lesson.fillBlanks || []).map(f => ({
+    type: 'fill',
+    sentence: f.cn, answer: f.answer, options: shuffle(f.options), vi: f.vi
+  }));
+  exQuestions = shuffle([...mcQuestions, ...fillQuestions]);
+}
+
+function startExercises() {
+  buildExercises();
+  exIdx = 0; exScore = 0;
+  document.getElementById('exSetup').style.display = 'none';
+  document.getElementById('exResultView').style.display = 'none';
+  document.getElementById('exQuizView').style.display = 'block';
+  renderExQuestion();
+}
+
+function renderExQuestion() {
+  exAnswered = false;
+  const q = exQuestions[exIdx];
+  document.getElementById('exProgText').textContent = `${exIdx + 1} / ${exQuestions.length}`;
+  document.getElementById('exProgFill').style.width = `${(exIdx / exQuestions.length) * 100}%`;
+  document.getElementById('exScorePill').textContent = `${exScore} đúng`;
+
+  const area = document.getElementById('exQuestionArea');
+  if (q.type === 'mc') {
+    area.innerHTML = `
+      <div class="card lex-q">
+        <div class="lex-instruction">Từ này có nghĩa là?</div>
+        <div class="quiz-hanzi">${q.hanzi}</div>
+        <div class="quiz-pinyin">${q.pinyin}</div>
+        <button class="speak-btn" id="exSpeakBtn" style="margin-top:10px;">🔊</button>
+      </div>
+      <div class="quiz-options" id="exOptions">
+        ${q.options.map(o => `<button class="quiz-opt" data-val="${encodeURIComponent(o)}">${o}</button>`).join('')}
+      </div>`;
+    document.getElementById('exSpeakBtn').onclick = () => speakChinese(q.hanzi);
+  } else {
+    const parts = q.sentence.split('___');
+    area.innerHTML = `
+      <div class="card lex-q">
+        <div class="lex-instruction">Điền từ còn thiếu vào câu</div>
+        <div class="lex-sentence">${parts[0]}<span class="blank">?</span>${parts[1] || ''}</div>
+        <div class="lex-vi">${q.vi}</div>
+      </div>
+      <div class="quiz-options" id="exOptions">
+        ${q.options.map(o => `<button class="quiz-opt" data-val="${encodeURIComponent(o)}">${o}</button>`).join('')}
+      </div>`;
+  }
+  document.querySelectorAll('#exOptions .quiz-opt').forEach(btn => btn.addEventListener('click', onExAnswer));
+}
+
+function onExAnswer(e) {
+  if (exAnswered) return;
+  exAnswered = true;
+  const q = exQuestions[exIdx];
+  const chosenVal = decodeURIComponent(e.currentTarget.dataset.val);
+  const isCorrect = chosenVal === q.answer;
+  if (isCorrect) exScore++;
+  document.querySelectorAll('#exOptions .quiz-opt').forEach(btn => {
+    btn.disabled = true;
+    const val = decodeURIComponent(btn.dataset.val);
+    if (val === q.answer) btn.classList.add('correct');
+    else if (btn === e.currentTarget) btn.classList.add('wrong');
+  });
+  if (q.type === 'mc') markKnown(q.hanzi, isCorrect);
+  setTimeout(() => {
+    exIdx++;
+    if (exIdx < exQuestions.length) renderExQuestion();
+    else finishExercises();
+  }, 1000);
+}
+
+function finishExercises() {
+  document.getElementById('exQuizView').style.display = 'none';
+  document.getElementById('exResultView').style.display = 'block';
+  document.getElementById('exResultScore').textContent = `${exScore}/${exQuestions.length}`;
+  const pct = Math.round((exScore / exQuestions.length) * 100);
+  const msg = pct >= 80 ? 'Xuất sắc! Bạn nắm rất chắc bài này 🎉' : pct >= 50 ? 'Khá tốt, ôn lại hội thoại một lần nữa nhé 💪' : 'Nên xem lại phần Từ mới và Hội thoại rồi làm lại 📚';
+  document.getElementById('exResultMsg').textContent = msg;
+}
+
+document.getElementById('exStartBtn').addEventListener('click', startExercises);
+document.getElementById('exRetryBtn').addEventListener('click', () => {
+  document.getElementById('exResultView').style.display = 'none';
+  document.getElementById('exSetup').style.display = 'block';
+});
+
+async function init() {
+  await loadData();
+  renderHeader();
+  renderVocab();
+  renderDialogue();
+  renderPager();
+}
+init();
+</script>
+</body>
+</html>

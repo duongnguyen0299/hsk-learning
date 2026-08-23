@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học HSK — Ngữ âm cơ bản</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="phonetics">
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">学</div>
+      <div class="brand-text"><strong>Học HSK</strong><span>TỰ HỌC TIẾNG TRUNG</span></div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-page="home"><span class="ic">⌂</span> Trang chủ</a>
+      <a href="phonetics.html" data-page="phonetics"><span class="ic">音</span> Ngữ âm cơ bản</a>
+      <a href="measures.html" data-page="measures"><span class="ic">量</span> Lượng từ</a>
+      <a href="lessons.html" data-page="lessons"><span class="ic">课</span> Bài học</a>
+      <a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span> Flashcard</a>
+      <a href="quiz.html" data-page="quiz"><span class="ic">?</span> Trắc nghiệm</a>
+      <a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span> Gõ Pinyin</a>
+      <a href="writing.html" data-page="writing"><span class="ic">✎</span> Luyện viết</a>
+      <a href="progress.html" data-page="progress"><span class="ic">◔</span> Tiến độ</a>
+    </nav>
+    <div class="sidebar-foot">Nên đọc qua trang này trước khi học từ vựng — nắm chắc cách phát âm sẽ giúp bạn học nhanh hơn rất nhiều.</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">Kiến thức nền tảng</span>
+        <h1>Ngữ âm cơ bản</h1>
+        <p class="sub">Mỗi âm tiết tiếng Trung gồm 3 phần: <strong>Thanh mẫu</strong> (phụ âm đầu) + <strong>Vận mẫu</strong> (phần vần) + <strong>Thanh điệu</strong> (dấu giọng). Bấm 🔊 để nghe cách đọc từng âm.</p>
+      </div>
+    </div>
+
+    <nav class="phon-jumpnav">
+      <a href="#tong-quan">Tổng quan</a>
+      <a href="#thanh-mau">Thanh mẫu</a>
+      <a href="#van-mau">Vận mẫu</a>
+      <a href="#thanh-dieu">Thanh điệu</a>
+      <a href="#luu-y">Dễ nhầm với người Việt</a>
+    </nav>
+
+    <section class="phon-section" id="tong-quan">
+      <h2><span class="num">1</span> Tổng quan hệ thống Pinyin</h2>
+      <p class="phon-intro">
+        Pinyin (拼音) là hệ thống ghi âm tiếng Trung bằng chữ La-tinh. Một âm tiết
+        (tương đương một chữ Hán) thường có cấu trúc:
+      </p>
+      <div class="card pad-lg" style="max-width:640px; margin-bottom:16px;">
+        <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap; justify-content:center; font-family:var(--font-display); font-size:22px;">
+          <span class="pill" style="background:rgba(46,111,163,.12); color:var(--azure-dark); font-size:16px;">Thanh mẫu</span>
+          <span style="color:var(--ink-faint);">+</span>
+          <span class="pill" style="background:rgba(21,158,122,.12); color:var(--jade-dark); font-size:16px;">Vận mẫu</span>
+          <span style="color:var(--ink-faint);">+</span>
+          <span class="pill" style="background:rgba(226,76,52,.12); color:var(--seal-dark); font-size:16px;">Thanh điệu</span>
+          <span style="color:var(--ink-faint);">=</span>
+          <span style="font-weight:800;">好 (hǎo)</span>
+        </div>
+        <p style="text-align:center; margin:14px 0 0; font-size:13px;">
+          h (thanh mẫu) + ǎo (vận mẫu, mang thanh 3) = <strong>hǎo</strong> — "tốt, hay"
+        </p>
+      </div>
+      <div class="callout">
+        <strong>Lưu ý:</strong> không phải âm tiết nào cũng có thanh mẫu. Ví dụ chữ
+        爱 (ài — yêu) chỉ có vận mẫu "ai" và thanh điệu, không có phụ âm đầu. Trường
+        hợp này gọi là "âm tiết zero thanh mẫu".
+      </div>
+    </section>
+
+    <section class="phon-section" id="thanh-mau">
+      <h2><span class="num">2</span> Bảng Thanh mẫu (声母)</h2>
+      <p class="phon-intro">Tiếng Trung chuẩn có 21 thanh mẫu (phụ âm đầu), chia theo vị trí phát âm. Ví dụ minh họa dùng từ HSK1 quen thuộc.</p>
+      <div id="initialsWrap"></div>
+    </section>
+
+    <section class="phon-section" id="van-mau">
+      <h2><span class="num">3</span> Bảng Vận mẫu (韵母)</h2>
+      <p class="phon-intro">Vận mẫu là phần vần đứng sau thanh mẫu, quyết định phần lớn "âm sắc" của âm tiết.</p>
+      <div id="finalsWrap"></div>
+      <div class="callout" style="margin-top:8px;">
+        <strong>Mẹo chính tả:</strong> vận mẫu "ü" viết thành <strong>u</strong> sau
+        j, q, x, y (vd: qù chứ không viết qǜ). Các vận mẫu "iou", "uei", "uen" khi có
+        thanh mẫu đứng trước được viết gọn thành <strong>iu, ui, un</strong> (vd:
+        jiǔ chứ không phải jiǒu; duì chứ không phải duèi).
+      </div>
+    </section>
+
+    <section class="phon-section" id="thanh-dieu">
+      <h2><span class="num">4</span> Thanh điệu (声调)</h2>
+      <p class="phon-intro">Tiếng Trung chuẩn có 4 thanh điệu chính + 1 thanh nhẹ (khinh thanh). Cùng một âm "ma" nhưng đổi thanh điệu sẽ đổi hẳn nghĩa:</p>
+      <div class="tone-grid" id="toneGrid"></div>
+      <div class="callout" style="margin-top:16px;">
+        <strong>Quy tắc đánh dấu thanh:</strong> dấu thanh luôn đặt trên nguyên âm
+        chính, theo thứ tự ưu tiên <strong>a &gt; o/e &gt; i/u/ü</strong> (nếu i và u
+        đứng cạnh nhau thì đánh dấu vào âm đứng sau). Khi đánh dấu trên "i", bỏ dấu
+        chấm phía trên (vd: yī).
+      </div>
+    </section>
+
+    <section class="phon-section" id="luu-y">
+      <h2><span class="num">5</span> Những âm dễ nhầm với người Việt</h2>
+      <p class="phon-intro">Một số cặp âm khiến người Việt hay nhầm hoặc phát âm sai vì tiếng Việt không phân biệt theo cùng cách. Bấm 🔊 để nghe và so sánh.</p>
+      <div class="card" style="overflow-x:auto;">
+        <table class="compare-table" id="compareTable"></table>
+      </div>
+    </section>
+
+    <div class="card pad-lg" style="text-align:center; max-width:520px; margin:0 auto;">
+      <h3 style="font-size:17px;">Đã nắm được lý thuyết rồi?</h3>
+      <p>Luyện phản xạ nghe – gõ pinyin ngay để ghi nhớ chắc hơn.</p>
+      <a href="pinyin.html" class="btn btn-primary btn-lg btn-block">Luyện gõ Pinyin ngay →</a>
+    </div>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <ul>
+    <li><a href="index.html" data-page="home"><span class="ic">⌂</span>Trang chủ</a></li>
+    <li><a href="phonetics.html" data-page="phonetics"><span class="ic">音</span>Ngữ âm</a></li>
+    <li><a href="measures.html" data-page="measures"><span class="ic">量</span>Lượng từ</a></li>
+    <li><a href="lessons.html" data-page="lessons"><span class="ic">课</span>Bài học</a></li>
+    <li><a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span>Flashcard</a></li>
+    <li><a href="quiz.html" data-page="quiz"><span class="ic">?</span>Trắc nghiệm</a></li>
+    <li><a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span>Pinyin</a></li>
+    <li><a href="writing.html" data-page="writing"><span class="ic">✎</span>Luyện viết</a></li>
+    <li><a href="progress.html" data-page="progress"><span class="ic">◔</span>Tiến độ</a></li>
+  </ul>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+// ---------- Dữ liệu Thanh mẫu ----------
+const INITIALS = [
+  { label: 'Âm môi — môi trên chạm môi dưới/răng', items: [
+    ['b', '爸', 'bà', 'bố'], ['p', '怕', 'pà', 'sợ'], ['m', '妈', 'mā', 'mẹ'], ['f', '饭', 'fàn', 'cơm'],
+  ]},
+  { label: 'Âm đầu lưỡi — đầu lưỡi chạm lợi', items: [
+    ['d', '大', 'dà', 'to'], ['t', '他', 'tā', 'anh ấy'], ['n', '哪', 'nǎ', 'nào'], ['l', '来', 'lái', 'đến'],
+  ]},
+  { label: 'Âm gốc lưỡi — gốc lưỡi chạm ngạc mềm', items: [
+    ['g', '哥', 'gē', 'anh trai'], ['k', '开', 'kāi', 'mở'], ['h', '好', 'hǎo', 'tốt'],
+  ]},
+  { label: 'Âm mặt lưỡi — mặt lưỡi áp ngạc cứng', items: [
+    ['j', '家', 'jiā', 'nhà'], ['q', '七', 'qī', 'bảy'], ['x', '西', 'xī', 'phía tây'],
+  ]},
+  { label: 'Âm uốn lưỡi — đầu lưỡi cong lên', items: [
+    ['zh', '中', 'zhōng', 'giữa'], ['ch', '吃', 'chī', 'ăn'], ['sh', '是', 'shì', 'là'], ['r', '人', 'rén', 'người'],
+  ]},
+  { label: 'Âm đầu lưỡi phẳng — đầu lưỡi chạm răng', items: [
+    ['z', '在', 'zài', 'ở, tại'], ['c', '菜', 'cài', 'món ăn'], ['s', '三', 'sān', 'ba'],
+  ]},
+  { label: 'Bán nguyên âm', items: [
+    ['y', '有', 'yǒu', 'có'], ['w', '我', 'wǒ', 'tôi'],
+  ]},
+];
+
+// ---------- Dữ liệu Vận mẫu ----------
+const FINALS = [
+  { label: 'Vận mẫu đơn', items: [
+    ['a', '八', 'bā', 'tám'], ['o', '喔', 'ō', 'ồ'], ['e', '饿', 'è', 'đói'],
+    ['i', '你', 'nǐ', 'bạn'], ['u', '五', 'wǔ', 'năm'], ['ü', '女', 'nǚ', 'nữ'],
+  ]},
+  { label: 'Vận mẫu kép (nguyên âm đôi)', items: [
+    ['ai', '在', 'zài', 'ở, tại'], ['ei', '谁', 'shéi', 'ai'], ['ao', '好', 'hǎo', 'tốt'], ['ou', '都', 'dōu', 'đều'],
+  ]},
+  { label: 'Vận mẫu mũi -n', items: [
+    ['an', '晚', 'wǎn', 'muộn'], ['en', '门', 'mén', 'cửa'], ['in', '新', 'xīn', 'mới'],
+    ['un', '问', 'wèn', 'hỏi'], ['ün', '云', 'yún', 'mây'],
+  ]},
+  { label: 'Vận mẫu mũi -ng', items: [
+    ['ang', '忙', 'máng', 'bận'], ['eng', '朋', 'péng', 'bạn'], ['ing', '姓', 'xìng', 'họ'], ['ong', '红', 'hóng', 'đỏ'],
+  ]},
+  { label: 'Vận mẫu ghép với âm đệm i', items: [
+    ['ia', '家', 'jiā', 'nhà'], ['ie', '谢', 'xiè', 'cảm ơn'], ['iao', '票', 'piào', 'vé'], ['iu (iou)', '九', 'jiǔ', 'chín'],
+    ['ian', '钱', 'qián', 'tiền'], ['iang', '两', 'liǎng', 'hai'], ['iong', '用', 'yòng', 'dùng'],
+  ]},
+  { label: 'Vận mẫu ghép với âm đệm u', items: [
+    ['ua', '话', 'huà', 'lời nói'], ['uo', '多', 'duō', 'nhiều'], ['uai', '快', 'kuài', 'nhanh'],
+    ['ui (uei)', '对', 'duì', 'đúng'], ['uan', '换', 'huàn', 'đổi'], ['uang', '黄', 'huáng', 'màu vàng'],
+  ]},
+  { label: 'Vận mẫu ghép với âm đệm ü / đặc biệt', items: [
+    ['üe', '月', 'yuè', 'tháng'], ['üan', '远', 'yuǎn', 'xa'], ['er', '二', 'èr', 'hai'],
+  ]},
+];
+
+// ---------- Dữ liệu Thanh điệu ----------
+const TONES = [
+  { mark: 'ā', name: 'Thanh 1 — ngang', desc: 'Đọc cao và đều, giữ nguyên độ cao từ đầu đến cuối, giống nốt nhạc kéo dài.', hz: '妈', py: 'mā', mn: 'mẹ', cls: 't1' },
+  { mark: 'á', name: 'Thanh 2 — huyền ngược (sắc)', desc: 'Đọc từ thấp lên cao, giống giọng hỏi lại "hả?" trong tiếng Việt.', hz: '麻', py: 'má', mn: 'cây gai / tê', cls: 't2' },
+  { mark: 'ǎ', name: 'Thanh 3 — trầm gãy (hỏi)', desc: 'Đọc từ giữa xuống thấp rồi lên lại nhẹ, gần giống thanh hỏi tiếng Việt nhưng kéo dài hơn.', hz: '马', py: 'mǎ', mn: 'con ngựa', cls: 't3' },
+  { mark: 'à', name: 'Thanh 4 — nặng xuống (huyền)', desc: 'Đọc từ cao xuống thấp thật nhanh và dứt khoát, giống thanh nặng/sắc mạnh trong tiếng Việt.', hz: '骂', py: 'mà', mn: 'mắng, chửi', cls: 't4' },
+];
+
+function initialsHTML() {
+  return INITIALS.map(group => `
+    <div class="phon-group">
+      <div class="phon-group-label">${group.label}</div>
+      <div class="sound-grid">
+        ${group.items.map(([py, hz, hzpy, mn]) => `
+          <div class="sound-chip">
+            <div class="py">${py}</div>
+            <div class="hz">${hz} <span style="color:var(--ink-faint);">${hzpy}</span></div>
+            <div class="mn">${mn}</div>
+            <button class="speak-btn" data-speak="${hz}" title="Nghe">🔊</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function finalsHTML() {
+  return FINALS.map(group => `
+    <div class="phon-group">
+      <div class="phon-group-label">${group.label}</div>
+      <div class="sound-grid">
+        ${group.items.map(([py, hz, hzpy, mn]) => `
+          <div class="sound-chip">
+            <div class="py">${py}</div>
+            <div class="hz">${hz} <span style="color:var(--ink-faint);">${hzpy}</span></div>
+            <div class="mn">${mn}</div>
+            <button class="speak-btn" data-speak="${hz}" title="Nghe">🔊</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function tonesHTML() {
+  return TONES.map(t => `
+    <div class="card tone-card ${t.cls}">
+      <div class="mark">${t.mark}</div>
+      <div class="name">${t.name}</div>
+      <div class="desc">${t.desc}</div>
+      <div class="example">
+        <span class="hz">${t.hz}</span>
+        ${t.py} — ${t.mn}
+        <button class="speak-btn" data-speak="${t.hz}" title="Nghe" style="margin:8px auto 0;">🔊</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+const COMPARE = [
+  ['zh / ch / sh', 'tr / ch / s (uốn lưỡi)', 'Đầu lưỡi phải cong hẳn lên chạm ngạc cứng, khác với "tr, ch, s" bẹt lưỡi trong tiếng Việt.', '中 zhōng', 'giữa'],
+  ['z / c / s', 'd(tr) / th / x', 'Đầu lưỡi chạm nhẹ vào mặt sau răng cửa trên, hơi "xì" nhẹ hơn tiếng Việt.', '三 sān', 'ba'],
+  ['j / q / x', 'ch / ch(bật hơi) / x', 'Mặt lưỡi áp sát ngạc cứng, âm nghe "nhẹ và mềm" hơn zh/ch/sh, dễ nhầm với "gi/ch/x" tiếng Việt.', '七 qī', 'bảy'],
+  ['b/d/g vs p/t/k', 'không phân biệt bật hơi', 'Tiếng Trung phân biệt theo <strong>bật hơi hay không</strong> (p bật hơi mạnh, b không bật hơi) chứ không theo hữu thanh/vô thanh như tiếng Việt.', '八 bā / 怕 pà', 'tám / sợ'],
+  ['ü', 'không có trong tiếng Việt', 'Chúm môi tròn như đọc "u" nhưng lưỡi để ở vị trí đọc "i". Gần giống âm "uy" nhưng môi tròn hơn.', '女 nǚ', 'nữ, con gái'],
+  ['e', 'khác "e" tiếng Việt', 'Đọc gần giống "ưa/ơ" trong tiếng Việt, miệng mở vừa, không phải "e" như trong "mẹ".', '饿 è', 'đói'],
+  ['-n vs -ng', 'phân biệt rõ ràng', 'An/En/In kết thúc bằng đầu lưỡi chạm lợi (giống "n" tiếng Việt); Ang/Eng/Ing kết thúc bằng gốc lưỡi (giống "ng" tiếng Việt). Hai âm cuối này thường bị người Việt phát âm giống nhau.', '朋友 péngyou', 'bạn bè'],
+  ['r', 'không có âm tương đương', 'Đầu lưỡi cong lên gần ngạc nhưng không chạm, hơi rung nhẹ, gần giống "r" tiếng Anh hơn là "r" tiếng Việt.', '人 rén', 'người'],
+];
+
+function compareHTML() {
+  const rows = COMPARE.map(([cn, vn, note, hz, mn]) => `
+    <tr>
+      <td class="py-cell">${cn}</td>
+      <td>${vn}</td>
+      <td>${note}</td>
+      <td>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span style="font-family:var(--font-display); font-size:16px;">${hz.split(' ')[0]}</span>
+          <span style="color:var(--ink-faint); font-size:12px;">${hz.split(' ')[1] || ''} · ${mn}</span>
+          <button class="speak-btn" data-speak="${hz.split(' ')[0]}" title="Nghe" style="width:28px; height:28px; font-size:12px;">🔊</button>
+        </div>
+      </td>
+    </tr>
+  `).join('');
+  return `<thead><tr><th>Âm tiếng Trung</th><th>Gần giống âm Việt</th><th>Lưu ý</th><th>Ví dụ</th></tr></thead><tbody>${rows}</tbody>`;
+}
+
+document.getElementById('initialsWrap').innerHTML = initialsHTML();
+document.getElementById('finalsWrap').innerHTML = finalsHTML();
+document.getElementById('toneGrid').innerHTML = tonesHTML();
+document.getElementById('compareTable').innerHTML = compareHTML();
+
+document.querySelectorAll('[data-speak]').forEach(btn => {
+  btn.addEventListener('click', () => speakChinese(btn.dataset.speak));
+});
+</script>
+</body>
+</html>

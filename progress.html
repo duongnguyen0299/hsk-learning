@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học HSK — Tiến độ</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="progress">
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">学</div>
+      <div class="brand-text"><strong>Học HSK</strong><span>TỰ HỌC TIẾNG TRUNG</span></div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-page="home"><span class="ic">⌂</span> Trang chủ</a>
+      <a href="phonetics.html" data-page="phonetics"><span class="ic">音</span> Ngữ âm cơ bản</a>
+      <a href="measures.html" data-page="measures"><span class="ic">量</span> Lượng từ</a>
+      <a href="lessons.html" data-page="lessons"><span class="ic">课</span> Bài học</a>
+      <a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span> Flashcard</a>
+      <a href="quiz.html" data-page="quiz"><span class="ic">?</span> Trắc nghiệm</a>
+      <a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span> Gõ Pinyin</a>
+      <a href="writing.html" data-page="writing"><span class="ic">✎</span> Luyện viết</a>
+      <a href="progress.html" data-page="progress"><span class="ic">◔</span> Tiến độ</a>
+    </nav>
+    <div class="sidebar-foot">Toàn bộ tiến độ được lưu trong bộ nhớ trình duyệt (localStorage) của thiết bị này.</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">Tiến độ</span>
+        <h1>Hành trình học của bạn</h1>
+        <p class="sub">Theo dõi số từ đã thuộc, kết quả trắc nghiệm và chuỗi ngày học liên tiếp.</p>
+      </div>
+      <button class="btn btn-outline" id="resetBtn">Đặt lại tiến độ</button>
+    </div>
+
+    <div class="grid grid-3" style="margin-bottom:16px;">
+      <div class="streak-box">
+        <div class="flame">🔥</div>
+        <div><div class="num" id="sStreak">0</div><div class="lbl">ngày liên tiếp</div></div>
+      </div>
+      <div class="card stat-card">
+        <div class="num" id="sKnown">0</div>
+        <div class="label">TỔNG SỐ TỪ ĐÃ THUỘC</div>
+      </div>
+      <div class="card stat-card">
+        <div class="num" id="sQuiz">0%</div>
+        <div class="label">TỶ LỆ ĐÚNG TRẮC NGHIỆM</div>
+      </div>
+    </div>
+    <div class="grid grid-3" style="margin-bottom:24px;">
+      <div class="card stat-card">
+        <div class="num" id="sPinyin">0%</div>
+        <div class="label">TỶ LỆ ĐÚNG GÕ PINYIN</div>
+      </div>
+      <div class="card stat-card">
+        <div class="num" id="sPinyinAttempts">0</div>
+        <div class="label">LƯỢT GÕ PINYIN ĐÃ LUYỆN</div>
+      </div>
+      <div class="card stat-card">
+        <div class="num" id="sWriting">0</div>
+        <div class="label">LƯỢT LUYỆN VIẾT ĐÃ THỰC HIỆN</div>
+      </div>
+    </div>
+
+    <div class="card pad-lg" style="margin-bottom:24px;">
+      <h3 style="font-size:17px; margin-bottom:18px;">Tiến độ theo cấp độ</h3>
+      <div id="levelBars"></div>
+    </div>
+
+    <div class="grid grid-2">
+      <div class="card pad-lg">
+        <h3 style="font-size:17px; margin-bottom:6px;">Lịch sử trắc nghiệm</h3>
+        <div id="quizHistory"></div>
+      </div>
+      <div class="card pad-lg">
+        <h3 style="font-size:17px; margin-bottom:6px;">Từ đã thuộc gần đây</h3>
+        <div id="knownWords"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <ul>
+    <li><a href="index.html" data-page="home"><span class="ic">⌂</span>Trang chủ</a></li>
+    <li><a href="phonetics.html" data-page="phonetics"><span class="ic">音</span>Ngữ âm</a></li>
+    <li><a href="measures.html" data-page="measures"><span class="ic">量</span>Lượng từ</a></li>
+    <li><a href="lessons.html" data-page="lessons"><span class="ic">课</span>Bài học</a></li>
+    <li><a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span>Flashcard</a></li>
+    <li><a href="quiz.html" data-page="quiz"><span class="ic">?</span>Trắc nghiệm</a></li>
+    <li><a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span>Pinyin</a></li>
+    <li><a href="writing.html" data-page="writing"><span class="ic">✎</span>Luyện viết</a></li>
+    <li><a href="progress.html" data-page="progress"><span class="ic">◔</span>Tiến độ</a></li>
+  </ul>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+const LEVEL_COLOR = { hsk1: 'var(--azure)', hsk2: 'var(--jade)', hsk3: 'var(--seal)' };
+
+async function init() {
+  const vocab = await loadVocab();
+  const p = getProgress();
+  const words = allWords(vocab);
+  const byHanzi = Object.fromEntries(words.map(w => [w.hanzi, w]));
+
+  document.getElementById('sStreak').textContent = p.streak.count;
+  document.getElementById('sKnown').textContent = Object.keys(p.known).length;
+  const qPct = p.quiz.attempts ? Math.round((p.quiz.correct / p.quiz.attempts) * 100) : 0;
+  document.getElementById('sQuiz').textContent = qPct + '%';
+
+  const pyPct = p.pinyin.attempts ? Math.round((p.pinyin.correct / p.pinyin.attempts) * 100) : 0;
+  document.getElementById('sPinyin').textContent = pyPct + '%';
+  document.getElementById('sPinyinAttempts').textContent = p.pinyin.attempts;
+  const writingCount = Object.values(p.writing).reduce((a, b) => a + b, 0);
+  document.getElementById('sWriting').textContent = writingCount;
+
+  document.getElementById('levelBars').innerHTML = LEVELS.map(lv => {
+    const st = levelStats(vocab, lv);
+    return `
+      <div class="progress-bar-row">
+        <div class="lbl">${LEVEL_LABEL[lv]}</div>
+        <div class="track"><div class="fill" style="width:${st.pct}%; background:${LEVEL_COLOR[lv]}"></div></div>
+        <div class="val">${st.known}/${st.total}</div>
+      </div>`;
+  }).join('');
+
+  const hist = p.quiz.history;
+  document.getElementById('quizHistory').innerHTML = hist.length ? hist.slice(0, 8).map(h => `
+    <div style="display:flex; justify-content:space-between; padding:9px 0; border-bottom:1px solid var(--border); font-size:13.5px;">
+      <span style="color:var(--ink-soft);">${h.date} · ${h.level === 'all' ? 'Tất cả' : LEVEL_LABEL[h.level]}</span>
+      <strong>${h.score}/${h.total}</strong>
+    </div>
+  `).join('') : `<p style="margin-top:8px;">Chưa có bài trắc nghiệm nào. <a href="quiz.html" style="color:var(--seal); font-weight:700;">Làm ngay →</a></p>`;
+
+  const known = Object.keys(p.known).slice(-12).reverse();
+  document.getElementById('knownWords').innerHTML = known.length ? `
+    <div class="word-chip-grid" style="margin-top:10px;">
+      ${known.map(h => `<div class="word-chip">${h}<span>${byHanzi[h] ? byHanzi[h].pinyin : ''}</span></div>`).join('')}
+    </div>` : `<p style="margin-top:8px;">Chưa có từ nào được đánh dấu đã thuộc. <a href="flashcards.html" style="color:var(--seal); font-weight:700;">Học Flashcard →</a></p>`;
+}
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (confirm('Bạn chắc chắn muốn xoá toàn bộ tiến độ đã lưu? Hành động này không thể hoàn tác.')) {
+    resetProgress();
+    toast('Đã đặt lại tiến độ');
+    setTimeout(() => location.reload(), 600);
+  }
+});
+
+init();
+</script>
+</body>
+</html>

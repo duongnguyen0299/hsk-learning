@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Học HSK — Lượng từ</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="measures">
+
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">学</div>
+      <div class="brand-text"><strong>Học HSK</strong><span>TỰ HỌC TIẾNG TRUNG</span></div>
+    </div>
+    <nav class="nav">
+      <a href="index.html" data-page="home"><span class="ic">⌂</span> Trang chủ</a>
+      <a href="phonetics.html" data-page="phonetics"><span class="ic">音</span> Ngữ âm cơ bản</a>
+      <a href="measures.html" data-page="measures"><span class="ic">量</span> Lượng từ</a>
+      <a href="lessons.html" data-page="lessons"><span class="ic">课</span> Bài học</a>
+      <a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span> Flashcard</a>
+      <a href="quiz.html" data-page="quiz"><span class="ic">?</span> Trắc nghiệm</a>
+      <a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span> Gõ Pinyin</a>
+      <a href="writing.html" data-page="writing"><span class="ic">✎</span> Luyện viết</a>
+      <a href="progress.html" data-page="progress"><span class="ic">◔</span> Tiến độ</a>
+    </nav>
+    <div class="sidebar-foot">Lượng từ dùng cho hầu hết mọi danh từ — giống "loại từ" trong tiếng Việt (cái, con, quyển, chiếc...), nên đọc kỹ trang này song song với học từ vựng.</div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <span class="eyebrow">Kiến thức nền tảng</span>
+        <h1>Lượng từ (量词)</h1>
+        <p class="sub">Khi đếm hoặc chỉ định một danh từ trong tiếng Trung, bắt buộc phải có lượng từ đứng giữa số/đại từ chỉ định và danh từ — giống hệt "loại từ" trong tiếng Việt (một <strong>quyển</strong> sách, hai <strong>con</strong> mèo...).</p>
+      </div>
+    </div>
+
+    <div class="card pad-lg" style="max-width:640px; margin-bottom:28px;">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; justify-content:center; font-family:var(--font-display); font-size:20px;">
+        <span class="pill" style="background:rgba(46,111,163,.12); color:var(--azure-dark); font-size:14px;">Số từ / Chỉ định</span>
+        <span style="color:var(--ink-faint);">+</span>
+        <span class="pill" style="background:rgba(232,162,58,.15); color:var(--gold-dark); font-size:14px;">Lượng từ</span>
+        <span style="color:var(--ink-faint);">+</span>
+        <span class="pill" style="background:rgba(21,158,122,.12); color:var(--jade-dark); font-size:14px;">Danh từ</span>
+        <span style="color:var(--ink-faint);">=</span>
+        <span style="font-weight:800;">一本书</span>
+      </div>
+      <p style="text-align:center; margin:14px 0 0; font-size:13px;">
+        一 (yī) + 本 (běn — lượng từ cho sách vở) + 书 (shū — sách) = <strong>yì běn shū</strong> — "một quyển sách"
+      </p>
+    </div>
+
+    <div class="callout" style="margin-bottom:32px; max-width:680px;">
+      <strong>Mẹo về thanh điệu của "一":</strong> chữ 一 (yī) đổi thanh điệu tùy
+      lượng từ đứng sau — đọc <strong>yì</strong> trước lượng từ mang thanh 1/2/3
+      (vd: yì zhāng, yì tiáo) và đọc <strong>yí</strong> trước lượng từ mang thanh 4
+      (vd: yí gè, yí jiàn, yí wèi). Không có lượng từ nào chắc chắn sai — nếu quên,
+      cứ dùng <strong>个 (gè)</strong> vì đây là lượng từ chung, dùng được cho phần lớn danh từ.
+    </div>
+
+    <div id="mwWrap"></div>
+
+    <section style="margin-top:16px;">
+      <h2 style="font-size:20px; margin-bottom:6px;">Kiểm tra nhanh</h2>
+      <p class="phon-intro">Chọn lượng từ đúng cho danh từ được cho.</p>
+      <div id="quizSetup">
+        <div class="card pad-lg" style="max-width:440px;">
+          <button class="btn btn-primary btn-lg btn-block" id="mwStartBtn">Bắt đầu (8 câu)</button>
+        </div>
+      </div>
+      <div id="quizView" class="quiz-wrap" style="display:none;">
+        <div class="flash-progress" style="margin-bottom:18px;">
+          <span id="mProgText">1 / 8</span>
+          <div class="track"><div class="fill" id="mProgFill" style="width:0%"></div></div>
+          <span class="pill" id="mScorePill">0 đúng</span>
+        </div>
+        <div class="card lex-q">
+          <div class="lex-instruction">Chọn lượng từ đúng để điền vào chỗ trống</div>
+          <div class="lex-sentence" id="mSentence"></div>
+          <div class="lex-vi" id="mVi"></div>
+        </div>
+        <div class="quiz-options" id="mOptions"></div>
+      </div>
+      <div id="quizResult" class="quiz-wrap" style="display:none;">
+        <div class="card quiz-result">
+          <div class="eyebrow" style="text-align:center;">Hoàn thành</div>
+          <div class="score" id="mResultScore">0/8</div>
+          <p id="mResultMsg" style="margin-top:10px;"></p>
+          <button class="btn btn-outline btn-block" id="mRetryBtn" style="margin-top:20px;">Làm lại</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <ul>
+    <li><a href="index.html" data-page="home"><span class="ic">⌂</span>Trang chủ</a></li>
+    <li><a href="phonetics.html" data-page="phonetics"><span class="ic">音</span>Ngữ âm</a></li>
+    <li><a href="measures.html" data-page="measures"><span class="ic">量</span>Lượng từ</a></li>
+    <li><a href="lessons.html" data-page="lessons"><span class="ic">课</span>Bài học</a></li>
+    <li><a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span>Flashcard</a></li>
+    <li><a href="quiz.html" data-page="quiz"><span class="ic">?</span>Trắc nghiệm</a></li>
+    <li><a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span>Pinyin</a></li>
+    <li><a href="writing.html" data-page="writing"><span class="ic">✎</span>Luyện viết</a></li>
+    <li><a href="progress.html" data-page="progress"><span class="ic">◔</span>Tiến độ</a></li>
+  </ul>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+const MEASURE_WORDS = [
+  { group: 'Lượng từ chung', mw: '个', py: 'gè', usage: 'Dùng cho phần lớn danh từ khi không chắc lượng từ riêng là gì — lượng từ "an toàn" nhất.', examples: [
+    ['一个人', 'yí gè rén', 'một người'], ['一个苹果', 'yí gè píngguǒ', 'một quả táo'], ['这个问题', 'zhège wèntí', 'vấn đề này'],
+  ]},
+  { group: 'Sách vở, ấn phẩm', mw: '本', py: 'běn', usage: 'Sách, vở, từ điển, tạp chí — vật có nhiều trang đóng thành tập.', examples: [
+    ['一本书', 'yì běn shū', 'một quyển sách'], ['两本词典', 'liǎng běn cídiǎn', 'hai quyển từ điển'],
+  ]},
+  { group: 'Vật phẳng, mỏng', mw: '张', py: 'zhāng', usage: 'Giấy, vé, ảnh, bàn, giường — vật có bề mặt phẳng.', examples: [
+    ['一张纸', 'yì zhāng zhǐ', 'một tờ giấy'], ['一张票', 'yì zhāng piào', 'một tấm vé'], ['一张桌子', 'yì zhāng zhuōzi', 'một cái bàn'],
+  ]},
+  { group: 'Quần áo khoác & sự việc', mw: '件', py: 'jiàn', usage: 'Áo (loại mặc phía trên/khoác ngoài) và các sự việc, món đồ nói chung.', examples: [
+    ['一件衣服', 'yí jiàn yīfu', 'một cái áo'], ['一件事', 'yí jiàn shì', 'một việc'],
+  ]},
+  { group: 'Vật dài, mềm', mw: '条', py: 'tiáo', usage: 'Con đường, con sông, con cá, cái quần, cái khăn — vật dài và có thể mềm/uốn.', examples: [
+    ['一条路', 'yì tiáo lù', 'một con đường'], ['一条鱼', 'yì tiáo yú', 'một con cá'], ['一条裤子', 'yì tiáo kùzi', 'một cái quần'],
+  ]},
+  { group: 'Vật có cán/tay cầm', mw: '把', py: 'bǎ', usage: 'Ô, dao, ghế, chìa khóa — vật có phần cán hoặc tay cầm.', examples: [
+    ['一把伞', 'yì bǎ sǎn', 'một cái ô'], ['一把椅子', 'yì bǎ yǐzi', 'một cái ghế'],
+  ]},
+  { group: 'Đồ theo đôi', mw: '双', py: 'shuāng', usage: 'Giày, đũa, tất — những vật luôn đi thành cặp.', examples: [
+    ['一双鞋', 'yì shuāng xié', 'một đôi giày'], ['一双筷子', 'yì shuāng kuàizi', 'một đôi đũa'],
+  ]},
+  { group: 'Người (trang trọng)', mw: '位', py: 'wèi', usage: 'Đếm người với sắc thái lịch sự, tôn trọng — dùng khi nói về khách, thầy cô, người lớn tuổi.', examples: [
+    ['一位老师', 'yí wèi lǎoshī', 'một thầy/cô giáo'], ['两位客人', 'liǎng wèi kèrén', 'hai vị khách'],
+  ]},
+  { group: 'Người trong gia đình', mw: '口', py: 'kǒu', usage: 'Chuyên dùng để đếm số người trong một gia đình/hộ.', examples: [
+    ['一口人', 'yì kǒu rén', 'một người (trong nhà)'], ['五口人', 'wǔ kǒu rén', 'năm người (trong nhà)'],
+  ]},
+  { group: 'Động vật', mw: '只', py: 'zhī', usage: 'Đa số động vật nhỏ và vừa (mèo, chó, chim...).', examples: [
+    ['一只猫', 'yì zhī māo', 'một con mèo'], ['两只狗', 'liǎng zhī gǒu', 'hai con chó'],
+  ]},
+  { group: 'Cửa hàng, tổ chức', mw: '家', py: 'jiā', usage: 'Cửa hàng, nhà hàng, công ty — nơi kinh doanh.', examples: [
+    ['一家商店', 'yì jiā shāngdiàn', 'một cửa hàng'], ['一家饭店', 'yì jiā fàndiàn', 'một nhà hàng'],
+  ]},
+  { group: 'Phòng ốc', mw: '间', py: 'jiān', usage: 'Phòng, gian nhà.', examples: [
+    ['一间房间', 'yì jiān fángjiān', 'một căn phòng'], ['一间教室', 'yì jiān jiàoshì', 'một phòng học'],
+  ]},
+  { group: 'Công trình lớn', mw: '座', py: 'zuò', usage: 'Núi, cầu, tòa nhà — công trình/địa hình lớn, cố định.', examples: [
+    ['一座山', 'yí zuò shān', 'một ngọn núi'], ['一座桥', 'yí zuò qiáo', 'một cây cầu'],
+  ]},
+  { group: 'Xe cộ', mw: '辆', py: 'liàng', usage: 'Ô tô, xe đạp, xe máy — phương tiện có bánh xe.', examples: [
+    ['一辆车', 'yí liàng chē', 'một chiếc xe'], ['一辆自行车', 'yí liàng zìxíngchē', 'một chiếc xe đạp'],
+  ]},
+  { group: 'Đồ uống trong cốc/chai', mw: '杯 / 瓶', py: 'bēi / píng', usage: '杯 cho đồ uống trong cốc/ly; 瓶 cho đồ uống trong chai.', examples: [
+    ['一杯茶', 'yì bēi chá', 'một cốc trà'], ['一瓶水', 'yì píng shuǐ', 'một chai nước'],
+  ]},
+  { group: 'Số lần', mw: '次', py: 'cì', usage: 'Đếm số lần thực hiện một hành động — không đi với danh từ mà đi sau động từ.', examples: [
+    ['去一次', 'qù yí cì', 'đi một lần'], ['看两次', 'kàn liǎng cì', 'xem hai lần'],
+  ]},
+  { group: 'Loại, kiểu', mw: '种', py: 'zhǒng', usage: 'Phân loại sự vật thành các loại/kiểu khác nhau.', examples: [
+    ['一种方法', 'yì zhǒng fāngfǎ', 'một cách'], ['两种颜色', 'liǎng zhǒng yánsè', 'hai loại màu'],
+  ]},
+  { group: 'Bài viết', mw: '篇', py: 'piān', usage: 'Bài văn, bài báo, bài khóa — văn bản hoàn chỉnh.', examples: [
+    ['一篇文章', 'yì piān wénzhāng', 'một bài viết'], ['一篇课文', 'yì piān kèwén', 'một bài khóa'],
+  ]},
+];
+
+function mwHTML() {
+  return `<div class="mw-grid">${MEASURE_WORDS.map(m => `
+    <div class="mw-card">
+      <div class="phon-group-label" style="margin-bottom:6px;">${m.group}</div>
+      <div class="mw-head">
+        <span class="mw-char">${m.mw}</span>
+        <span class="mw-py">${m.py}</span>
+        <button class="speak-btn" data-speak="${m.mw.split(' / ')[0]}" title="Nghe" style="margin-left:auto;">🔊</button>
+      </div>
+      <div class="mw-usage">${m.usage}</div>
+      <div class="mw-example-list">
+        ${m.examples.map(([cn, py, vi]) => `
+          <div class="mw-example">
+            <div class="txt"><span class="cn">${cn}</span><span class="py">${py}</span><span class="vi">${vi}</span></div>
+            <button class="speak-btn" data-speak="${cn}" title="Nghe">🔊</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('')}</div>`;
+}
+
+document.getElementById('mwWrap').innerHTML = mwHTML();
+document.querySelectorAll('[data-speak]').forEach(btn => {
+  btn.addEventListener('click', () => speakChinese(btn.dataset.speak));
+});
+
+/* ---------- Quiz nhanh: chọn lượng từ đúng cho danh từ ---------- */
+let mQuestions = [], mIdx = 0, mScore = 0, mAnswered = false;
+const QUIZ_LEN = 8;
+
+function buildMwQuiz() {
+  // loại '次' vì đây là lượng từ đi với động từ, không đi với danh từ như các lượng từ khác
+  const pool = MEASURE_WORDS.filter(m => m.mw !== '次').flatMap(m =>
+    m.examples.map(ex => {
+      // với nhóm gộp (vd "杯 / 瓶"), lượng từ đúng là ký tự đầu tiên của cụm ví dụ sau số từ
+      const mwChar = ex[0][1];
+      return { mw: mwChar, ex };
+    })
+  );
+  const chosen = pick(pool, Math.min(QUIZ_LEN, pool.length));
+  const allMw = [...new Set(pool.map(p => p.mw))];
+  mQuestions = chosen.map(item => {
+    const sentence = item.ex[0].replace(item.mw, '___');
+    const distractors = pick(allMw.filter(x => x !== item.mw), 3);
+    return { sentence, vi: item.ex[2], answer: item.mw, options: shuffle([item.mw, ...distractors]) };
+  });
+}
+
+function startMwQuiz() {
+  buildMwQuiz();
+  mIdx = 0; mScore = 0;
+  document.getElementById('quizSetup').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('quizView').style.display = 'block';
+  renderMwQuestion();
+}
+
+function renderMwQuestion() {
+  mAnswered = false;
+  const q = mQuestions[mIdx];
+  const parts = q.sentence.split('___');
+  document.getElementById('mSentence').innerHTML = `${parts[0]}<span class="blank">?</span>${parts[1] || ''}`;
+  document.getElementById('mVi').textContent = q.vi;
+  document.getElementById('mProgText').textContent = `${mIdx + 1} / ${mQuestions.length}`;
+  document.getElementById('mProgFill').style.width = `${(mIdx / mQuestions.length) * 100}%`;
+  document.getElementById('mScorePill').textContent = `${mScore} đúng`;
+  document.getElementById('mOptions').innerHTML = q.options.map(o =>
+    `<button class="quiz-opt" data-val="${encodeURIComponent(o)}">${o}</button>`
+  ).join('');
+  document.querySelectorAll('#mOptions .quiz-opt').forEach(btn => btn.addEventListener('click', onMwAnswer));
+}
+
+function onMwAnswer(e) {
+  if (mAnswered) return;
+  mAnswered = true;
+  const q = mQuestions[mIdx];
+  const chosenVal = decodeURIComponent(e.currentTarget.dataset.val);
+  if (chosenVal === q.answer) mScore++;
+  document.querySelectorAll('#mOptions .quiz-opt').forEach(btn => {
+    btn.disabled = true;
+    const val = decodeURIComponent(btn.dataset.val);
+    if (val === q.answer) btn.classList.add('correct');
+    else if (btn === e.currentTarget) btn.classList.add('wrong');
+  });
+  setTimeout(() => {
+    mIdx++;
+    if (mIdx < mQuestions.length) renderMwQuestion();
+    else finishMwQuiz();
+  }, 900);
+}
+
+function finishMwQuiz() {
+  document.getElementById('quizView').style.display = 'none';
+  document.getElementById('quizResult').style.display = 'block';
+  document.getElementById('mResultScore').textContent = `${mScore}/${mQuestions.length}`;
+  const pct = Math.round((mScore / mQuestions.length) * 100);
+  document.getElementById('mResultMsg').textContent =
+    pct >= 80 ? 'Xuất sắc! Bạn nắm rất chắc lượng từ 🎉' : pct >= 50 ? 'Khá tốt, ôn lại bảng phía trên nhé 💪' : 'Nên đọc lại bảng lượng từ rồi thử lại 📚';
+}
+
+document.getElementById('mwStartBtn').addEventListener('click', startMwQuiz);
+document.getElementById('mRetryBtn').addEventListener('click', () => {
+  document.getElementById('quizResult').style.display = 'none';
+  document.getElementById('quizSetup').style.display = 'block';
+});
+</script>
+</body>
+</html>
