@@ -2081,6 +2081,856 @@
             ]
         },
         {
+            "id": "hsk1-19",
+            "level": "hsk1",
+            "number": 19,
+            "title_vi": "Trợ từ ngữ pháp cơ bản",
+            "title_cn": "基本助词和否定",
+            "icon": "🔤",
+            "vocab": [
+                "吧",
+                "了",
+                "的",
+                "地",
+                "着",
+                "都",
+                "就",
+                "会",
+                "能",
+                "要",
+                "还是",
+                "还有",
+                "是不是",
+                "没",
+                "没有",
+                "没什么",
+                "没事儿",
+                "不",
+                "不大",
+                "不对",
+                "不用",
+                "对",
+                "再",
+                "在",
+                "在家",
+                "正",
+                "正在",
+                "和",
+                "们",
+                "有",
+                "有的",
+                "有些",
+                "有一些",
+                "有时",
+                "有时候",
+                "一样"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "你在家吗？还是在公司？",
+                    "py": "Nǐ zài jiā ma? Háishi zài gōngsī?",
+                    "vi": "Bạn ở nhà à? Hay là đang ở công ty?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "我在家，正在看书呢。",
+                    "py": "Wǒ zài jiā, zhèngzài kànshū ne.",
+                    "vi": "Tôi đang ở nhà, đang đọc sách đây."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "你有没有时间？我们出去走走吧。",
+                    "py": "Nǐ yǒu méiyǒu shíjiān? Wǒmen chūqù zǒuzou ba.",
+                    "vi": "Bạn có thời gian không? Chúng ta ra ngoài đi dạo đi."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "没事儿，我马上就来。",
+                    "py": "Méishìr, wǒ mǎshàng jiù lái.",
+                    "vi": "Không sao, tôi đến ngay đây."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "你们都到了吗？",
+                    "py": "Nǐmen dōu dào le ma?",
+                    "vi": "Các bạn đến hết chưa?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "还没有，有的人还没到，有些人已经到了。",
+                    "py": "Hái méiyǒu, yǒude rén hái méi dào, yǒuxiē rén yǐjīng dào le.",
+                    "vi": "Vẫn chưa, có người vẫn chưa đến, có người đã đến rồi."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "是不是又晚了？他们有时候不注意时间。",
+                    "py": "Shì bu shì yòu wǎn le? Tāmen yǒushíhou bú zhùyì shíjiān.",
+                    "vi": "Có phải lại muộn nữa không? Họ đôi khi không để ý giờ giấc."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "没关系，我们的想法一样，不用着急。",
+                    "py": "Méi guānxi, wǒmen de xiǎngfǎ yíyàng, búyòng zháojí.",
+                    "vi": "Không sao, suy nghĩ của chúng ta giống nhau, không cần vội."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "你在家吗？___在公司？",
+                    "answer": "还是",
+                    "options": [
+                        "还是",
+                        "还有",
+                        "是不是",
+                        "都"
+                    ],
+                    "vi": "Bạn ở nhà à? Hay là đang ở công ty?"
+                },
+                {
+                    "cn": "我在家，___看书呢。",
+                    "answer": "正在",
+                    "options": [
+                        "正在",
+                        "有时候",
+                        "一样",
+                        "不用"
+                    ],
+                    "vi": "Tôi đang ở nhà, đang đọc sách đây."
+                },
+                {
+                    "cn": "我们的想法___，不用着急。",
+                    "answer": "一样",
+                    "options": [
+                        "一样",
+                        "没事儿",
+                        "不大",
+                        "有的"
+                    ],
+                    "vi": "Suy nghĩ của chúng ta giống nhau, không cần vội."
+                }
+            ]
+        },
+        {
+            "id": "hsk1-20",
+            "level": "hsk1",
+            "number": 20,
+            "title_vi": "Trường học mở rộng & Quốc gia",
+            "title_cn": "学校和国家",
+            "icon": "🌏",
+            "vocab": [
+                "学院",
+                "小学",
+                "小学生",
+                "中学",
+                "中学生",
+                "教学楼",
+                "国",
+                "国家",
+                "国外",
+                "外国",
+                "外语",
+                "中国",
+                "中文",
+                "北京",
+                "认真",
+                "新年",
+                "中"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "你在哪个国家学习？",
+                    "py": "Nǐ zài nǎge guójiā xuéxí?",
+                    "vi": "Bạn học ở nước nào?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "我在中国北京，在一个学院学中文。",
+                    "py": "Wǒ zài Zhōngguó Běijīng, zài yí gè xuéyuàn xué Zhōngwén.",
+                    "vi": "Tôi ở Bắc Kinh, Trung Quốc, học tiếng Trung ở một học viện."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "你以前在中学还是小学学过外语？",
+                    "py": "Nǐ yǐqián zài zhōngxué háishi xiǎoxué xuéguo wàiyǔ?",
+                    "vi": "Trước đây bạn học ngoại ngữ ở trung học hay tiểu học vậy?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "中学。那时候我是中学生，学得很认真。",
+                    "py": "Zhōngxué. Nà shíhou wǒ shì zhōngxuéshēng, xué de hěn rènzhēn.",
+                    "vi": "Trung học. Lúc đó tôi là học sinh trung học, học rất nghiêm túc."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "教学楼在学校中间吗？",
+                    "py": "Jiàoxuélóu zài xuéxiào zhōngjiān ma?",
+                    "vi": "Tòa nhà học nằm giữa trường à?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "对，很多外国学生和小学生都在这里上课。",
+                    "py": "Duì, hěn duō wàiguó xuésheng hé xiǎoxuéshēng dōu zài zhèlǐ shàngkè.",
+                    "vi": "Đúng vậy, nhiều học sinh nước ngoài và học sinh tiểu học đều học ở đây."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "你想不想去国外看看？",
+                    "py": "Nǐ xiǎng bu xiǎng qù guówài kànkan?",
+                    "vi": "Bạn có muốn ra nước ngoài xem thử không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "想，新年的时候我打算回家，然后再去别的国家。",
+                    "py": "Xiǎng, xīnnián de shíhou wǒ dǎsuàn huíjiā, ránhòu zài qù biéde guójiā.",
+                    "vi": "Muốn chứ, dịp năm mới tôi định về nhà, rồi sau đó đi nước khác."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "我在中国北京，在一个___学中文。",
+                    "answer": "学院",
+                    "options": [
+                        "学院",
+                        "小学",
+                        "中学",
+                        "教学楼"
+                    ],
+                    "vi": "Tôi ở Bắc Kinh, Trung Quốc, học tiếng Trung ở một học viện."
+                },
+                {
+                    "cn": "很多___学生和小学生都在这里上课。",
+                    "answer": "外国",
+                    "options": [
+                        "外国",
+                        "中国",
+                        "国家",
+                        "外语"
+                    ],
+                    "vi": "Nhiều học sinh nước ngoài và học sinh tiểu học đều học ở đây."
+                },
+                {
+                    "cn": "你想不想去___看看？",
+                    "answer": "国外",
+                    "options": [
+                        "国外",
+                        "中文",
+                        "北京",
+                        "国家"
+                    ],
+                    "vi": "Bạn có muốn ra nước ngoài xem thử không?"
+                }
+            ]
+        },
+        {
+            "id": "hsk1-21",
+            "level": "hsk1",
+            "number": 21,
+            "title_vi": "Thời gian & Số lượng bổ sung",
+            "title_cn": "时间和数量补充",
+            "icon": "📅",
+            "vocab": [
+                "半年",
+                "半天",
+                "次",
+                "第",
+                "第二",
+                "一半",
+                "一边",
+                "一点儿",
+                "一会儿",
+                "一块儿",
+                "一下儿",
+                "一些",
+                "年",
+                "月",
+                "日",
+                "日期",
+                "上次",
+                "下次",
+                "马上",
+                "最",
+                "最好",
+                "最后",
+                "常",
+                "常常",
+                "从",
+                "先"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "这是你第一次来这儿吗？",
+                    "py": "Zhè shì nǐ dì yī cì lái zhèr ma?",
+                    "vi": "Đây là lần đầu tiên bạn đến đây à?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "不是，我上次也来过，从去年就常来了。",
+                    "py": "Bú shì, wǒ shàngcì yě láiguò, cóng qùnián jiù cháng lái le.",
+                    "vi": "Không phải, lần trước tôi cũng đến rồi, từ năm ngoái tôi đã hay đến."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "你常常一个人来吗？",
+                    "py": "Nǐ chángcháng yí gè rén lái ma?",
+                    "vi": "Bạn có thường một mình đến không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "不，我一般和朋友一块儿来。",
+                    "py": "Bù, wǒ yìbān hé péngyou yíkuàir lái.",
+                    "vi": "Không, tôi thường cùng bạn bè đến."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "我们等一会儿再走，好吗？",
+                    "py": "Wǒmen děng yíhuìr zài zǒu, hǎo ma?",
+                    "vi": "Chúng ta đợi một lát rồi hãy đi, được không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "好，你先看一下儿地图，我们最好从这条路走。",
+                    "py": "Hǎo, nǐ xiān kàn yíxiàr dìtú, wǒmen zuìhǎo cóng zhè tiáo lù zǒu.",
+                    "vi": "Được, bạn xem bản đồ một chút trước, chúng ta nên đi theo đường này thì tốt hơn."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "下次是什么日期？我记一下第二次的时间。",
+                    "py": "Xiàcì shì shénme rìqī? Wǒ jì yíxià dì èr cì de shíjiān.",
+                    "vi": "Lần sau là ngày nào? Để tôi ghi lại thời gian lần thứ hai."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "下个月一号，我们半天就能到，最后一起吃饭。",
+                    "py": "Xià gè yuè yī hào, wǒmen bàntiān jiù néng dào, zuìhòu yìqǐ chīfàn.",
+                    "vi": "Mùng một tháng sau, chúng ta chỉ mất nửa ngày là đến nơi, cuối cùng cùng nhau ăn cơm."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "这是你___一次来这儿吗？",
+                    "answer": "第",
+                    "options": [
+                        "第",
+                        "次",
+                        "一半",
+                        "一些"
+                    ],
+                    "vi": "Đây là lần đầu tiên bạn đến đây à?"
+                },
+                {
+                    "cn": "我们等___再走，好吗？",
+                    "answer": "一会儿",
+                    "options": [
+                        "一会儿",
+                        "一下儿",
+                        "一点儿",
+                        "一块儿"
+                    ],
+                    "vi": "Chúng ta đợi một lát rồi hãy đi, được không?"
+                },
+                {
+                    "cn": "我们___从这条路走。",
+                    "answer": "最好",
+                    "options": [
+                        "最好",
+                        "最后",
+                        "常常",
+                        "马上"
+                    ],
+                    "vi": "Chúng ta nên đi theo đường này thì tốt hơn."
+                }
+            ]
+        },
+        {
+            "id": "hsk1-22",
+            "level": "hsk1",
+            "number": 22,
+            "title_vi": "Động từ & Tính từ bổ sung",
+            "title_cn": "补充动词和形容词",
+            "icon": "🧩",
+            "vocab": [
+                "帮",
+                "帮忙",
+                "比",
+                "差",
+                "错",
+                "得到",
+                "等",
+                "动",
+                "动作",
+                "放假",
+                "放学",
+                "干",
+                "干什么",
+                "见",
+                "见面",
+                "明白",
+                "试",
+                "事",
+                "手",
+                "行",
+                "重",
+                "子",
+                "少",
+                "多",
+                "个",
+                "口",
+                "间",
+                "有名",
+                "有用",
+                "那边",
+                "这边",
+                "上",
+                "上车",
+                "上学",
+                "下",
+                "下车",
+                "生日",
+                "班",
+                "白",
+                "号",
+                "话",
+                "工人",
+                "地点",
+                "地方",
+                "地上"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "你在干什么？需要帮忙吗？",
+                    "py": "Nǐ zài gàn shénme? Xūyào bāngmáng ma?",
+                    "vi": "Bạn đang làm gì vậy? Có cần giúp không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "我在等一个电话，我们班明天放假。",
+                    "py": "Wǒ zài děng yí gè diànhuà, wǒmen bān míngtiān fàngjià.",
+                    "vi": "Tôi đang đợi một cuộc điện thoại, lớp mình mai được nghỉ."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "真的吗？那我们下午几点见面？",
+                    "py": "Zhēnde ma? Nà wǒmen xiàwǔ jǐ diǎn jiànmiàn?",
+                    "vi": "Thật á? Vậy chiều nay mấy giờ chúng ta gặp mặt?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "三点吧，地点在那边，不在这边。",
+                    "py": "Sān diǎn ba, dìdiǎn zài nàbiān, bú zài zhèbiān.",
+                    "vi": "Ba giờ nhé, địa điểm ở bên kia, không phải bên này."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "好，我放学以后上车过去。",
+                    "py": "Hǎo, wǒ fàngxué yǐhòu shàngchē guòqù.",
+                    "vi": "Được, tôi tan học xong lên xe đến đó."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "明白了。到了以后下车，那个地方很有名。",
+                    "py": "Míngbai le. Dàole yǐhòu xiàchē, nàge dìfāng hěn yǒumíng.",
+                    "vi": "Hiểu rồi. Đến nơi thì xuống xe, chỗ đó rất nổi tiếng."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "对了，今天是我的生日，想请工人师傅们吃饭。",
+                    "py": "Duì le, jīntiān shì wǒ de shēngrì, xiǎng qǐng gōngrén shīfumen chīfàn.",
+                    "vi": "À đúng rồi, hôm nay là sinh nhật tôi, muốn mời các bác công nhân ăn cơm."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "行，这个主意很有用，大家都会很高兴。",
+                    "py": "Xíng, zhège zhǔyi hěn yǒuyòng, dàjiā dōu huì hěn gāoxìng.",
+                    "vi": "Được đấy, ý này rất hay, mọi người sẽ rất vui."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "你在___？需要帮忙吗？",
+                    "answer": "干什么",
+                    "options": [
+                        "干什么",
+                        "放学",
+                        "上学",
+                        "见面"
+                    ],
+                    "vi": "Bạn đang làm gì vậy? Có cần giúp không?"
+                },
+                {
+                    "cn": "地点在那边，不在___。",
+                    "answer": "这边",
+                    "options": [
+                        "这边",
+                        "那边",
+                        "地上",
+                        "地方"
+                    ],
+                    "vi": "Địa điểm ở bên kia, không phải bên này."
+                },
+                {
+                    "cn": "这个主意很___，大家都会很高兴。",
+                    "answer": "有用",
+                    "options": [
+                        "有用",
+                        "有名",
+                        "明白",
+                        "得到"
+                    ],
+                    "vi": "Ý này rất hay, mọi người sẽ rất vui."
+                }
+            ]
+        },
+        {
+            "id": "hsk2-01",
+            "level": "hsk2",
+            "number": 1,
+            "title_vi": "Cảm xúc & Liên từ cơ bản",
+            "title_cn": "感觉和基本连词",
+            "icon": "😊",
+            "vocab": [
+                "感觉",
+                "感到",
+                "感动",
+                "感谢",
+                "开心",
+                "快乐",
+                "放心",
+                "哭",
+                "关心",
+                "好像",
+                "可怕",
+                "可爱",
+                "难过",
+                "忽然",
+                "故意",
+                "然后",
+                "虽然",
+                "但是",
+                "所以",
+                "因为"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "你今天看起来不开心，怎么了？",
+                    "py": "Nǐ jīntiān kàn qǐlái bù kāixīn, zěnme le?",
+                    "vi": "Hôm nay bạn trông có vẻ không vui, sao vậy?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "因为工作太多了，所以我感到很累。",
+                    "py": "Yīnwèi gōngzuò tài duō le, suǒyǐ wǒ gǎndào hěn lèi.",
+                    "vi": "Vì công việc quá nhiều nên tôi cảm thấy rất mệt."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "虽然工作多，但是你别难过，我们可以帮你。",
+                    "py": "Suīrán gōngzuò duō, dànshì nǐ bié nánguò, wǒmen kěyǐ bāng nǐ.",
+                    "vi": "Tuy công việc nhiều nhưng bạn đừng buồn, chúng tôi có thể giúp bạn."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "真的吗？谢谢你们的关心，我很感动。",
+                    "py": "Zhēnde ma? Xièxie nǐmen de guānxīn, wǒ hěn gǎndòng.",
+                    "vi": "Thật à? Cảm ơn sự quan tâm của các bạn, tôi rất cảm động."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "别哭了，先放心休息一下吧。",
+                    "py": "Bié kū le, xiān fàngxīn xiūxi yíxià ba.",
+                    "vi": "Đừng khóc nữa, cứ yên tâm nghỉ ngơi một chút trước đã."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "好，然后我们一起想办法解决问题。",
+                    "py": "Hǎo, ránhòu wǒmen yìqǐ xiǎng bànfǎ jiějué wèntí.",
+                    "vi": "Được, sau đó chúng ta cùng nghĩ cách giải quyết vấn đề."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "忽然想起来，你不是故意迟到的吧？",
+                    "py": "Hūrán xiǎngqǐlái, nǐ bú shì gùyì chídào de ba?",
+                    "vi": "Chợt nhớ ra, bạn không phải cố ý đến muộn đấy chứ?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "当然不是，我好像忘了看时间。",
+                    "py": "Dāngrán bú shì, wǒ hǎoxiàng wàngle kàn shíjiān.",
+                    "vi": "Đương nhiên không, hình như tôi quên xem giờ."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "___工作太多了，所以我感到很累。",
+                    "answer": "因为",
+                    "options": [
+                        "因为",
+                        "但是",
+                        "然后",
+                        "故意"
+                    ],
+                    "vi": "Vì công việc quá nhiều nên tôi cảm thấy rất mệt."
+                },
+                {
+                    "cn": "虽然工作多，___你别难过。",
+                    "answer": "但是",
+                    "options": [
+                        "但是",
+                        "所以",
+                        "因为",
+                        "好像"
+                    ],
+                    "vi": "Tuy công việc nhiều nhưng bạn đừng buồn."
+                },
+                {
+                    "cn": "谢谢你们的关心，我很___。",
+                    "answer": "感动",
+                    "options": [
+                        "感动",
+                        "放心",
+                        "开心",
+                        "难过"
+                    ],
+                    "vi": "Cảm ơn sự quan tâm của các bạn, tôi rất cảm động."
+                }
+            ]
+        },
+        {
+            "id": "hsk2-02",
+            "level": "hsk2",
+            "number": 2,
+            "title_vi": "Công sở & Sự nghiệp",
+            "title_cn": "公司和事业",
+            "icon": "🏢",
+            "vocab": [
+                "公司",
+                "经理",
+                "同事",
+                "办公室",
+                "打工",
+                "机会",
+                "计划",
+                "成绩",
+                "成为",
+                "教育",
+                "交通",
+                "加油",
+                "复习",
+                "考生",
+                "教师",
+                "健康",
+                "讨论",
+                "原来",
+                "越来越",
+                "刚刚"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "你刚刚说的那个公司在哪儿？",
+                    "py": "Nǐ gānggang shuō de nàge gōngsī zài nǎr?",
+                    "vi": "Cái công ty bạn vừa nói đến ở đâu vậy?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "在市中心，我同事的办公室就在那儿。",
+                    "py": "Zài shìzhōngxīn, wǒ tóngshì de bàngōngshì jiù zài nàr.",
+                    "vi": "Ở trung tâm thành phố, văn phòng của đồng nghiệp tôi ở đó."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "原来是这样，交通方便吗？",
+                    "py": "Yuánlái shì zhèyàng, jiāotōng fāngbiàn ma?",
+                    "vi": "Ra là vậy, giao thông có tiện không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "很方便。我的计划是明年也去那家公司打工。",
+                    "py": "Hěn fāngbiàn. Wǒ de jìhuà shì míngnián yě qù nà jiā gōngsī dǎgōng.",
+                    "vi": "Rất tiện. Kế hoạch của tôi là sang năm cũng đi làm thêm ở công ty đó."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "那你要多复习，成绩越来越好才有机会。",
+                    "py": "Nà nǐ yào duō fùxí, chéngjì yuèláiyuè hǎo cái yǒu jīhuì.",
+                    "vi": "Vậy bạn phải ôn tập nhiều, thành tích ngày càng tốt thì mới có cơ hội."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "是啊，我想成为一个好的经理。",
+                    "py": "Shì a, wǒ xiǎng chéngwéi yí gè hǎo de jīnglǐ.",
+                    "vi": "Đúng vậy, tôi muốn trở thành một quản lý tốt."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "教师说过，健康和教育都很重要。",
+                    "py": "Jiàoshī shuōguo, jiànkāng hé jiàoyù dōu hěn zhòngyào.",
+                    "vi": "Thầy giáo từng nói, sức khỏe và giáo dục đều rất quan trọng."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "对，考生们也应该讨论一下未来的计划。加油！",
+                    "py": "Duì, kǎoshēngmen yě yīnggāi tǎolùn yíxià wèilái de jìhuà. Jiāyóu!",
+                    "vi": "Đúng vậy, các thí sinh cũng nên thảo luận về kế hoạch tương lai. Cố lên!"
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "我的___是明年也去那家公司打工。",
+                    "answer": "计划",
+                    "options": [
+                        "计划",
+                        "机会",
+                        "成绩",
+                        "健康"
+                    ],
+                    "vi": "Kế hoạch của tôi là sang năm cũng đi làm thêm ở công ty đó."
+                },
+                {
+                    "cn": "成绩___好才有机会。",
+                    "answer": "越来越",
+                    "options": [
+                        "越来越",
+                        "原来",
+                        "刚刚",
+                        "故意"
+                    ],
+                    "vi": "Thành tích ngày càng tốt thì mới có cơ hội."
+                },
+                {
+                    "cn": "我想___一个好的经理。",
+                    "answer": "成为",
+                    "options": [
+                        "成为",
+                        "成绩",
+                        "计划",
+                        "教育"
+                    ],
+                    "vi": "Tôi muốn trở thành một quản lý tốt."
+                }
+            ]
+        },
+        {
+            "id": "hsk2-03",
+            "level": "hsk2",
+            "number": 3,
+            "title_vi": "Siêu thị & Mua sắm mở rộng",
+            "title_cn": "超市和购物",
+            "icon": "🛒",
+            "vocab": [
+                "超市",
+                "便宜",
+                "不错",
+                "够",
+                "不够",
+                "菜单",
+                "筷子",
+                "快餐",
+                "饺子",
+                "公斤",
+                "克",
+                "斤",
+                "角",
+                "换",
+                "卡",
+                "礼物",
+                "客人",
+                "酒",
+                "酒店",
+                "老朋友",
+                "交朋友"
+            ],
+            "dialogue": [
+                {
+                    "speaker": "A",
+                    "cn": "我们去超市买点儿东西吧，晚上有客人来。",
+                    "py": "Wǒmen qù chāoshì mǎi diǎnr dōngxi ba, wǎnshang yǒu kèrén lái.",
+                    "vi": "Chúng ta đi siêu thị mua chút đồ nhé, tối nay có khách đến."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "好啊，是老朋友吗？",
+                    "py": "Hǎo a, shì lǎo péngyou ma?",
+                    "vi": "Được đấy, là bạn cũ à?"
+                },
+                {
+                    "speaker": "A",
+                    "cn": "对，我们在国外交朋友认识的，很久没见了。",
+                    "py": "Duì, wǒmen zài guówài jiāo péngyou rènshi de, hěn jiǔ méi jiàn le.",
+                    "vi": "Đúng vậy, chúng tôi quen nhau lúc kết bạn ở nước ngoài, lâu rồi không gặp."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "那我们买点儿饺子和一瓶酒吧，这家超市不错。",
+                    "py": "Nà wǒmen mǎi diǎnr jiǎozi hé yì píng jiǔ ba, zhè jiā chāoshì búcuò.",
+                    "vi": "Vậy chúng ta mua ít sủi cảo và một chai rượu đi, siêu thị này khá tốt."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "这个多少钱一斤？看看菜单价格。",
+                    "py": "Zhège duōshǎo qián yì jīn? Kànkan càidān jiàgé.",
+                    "vi": "Cái này bao nhiêu tiền một cân? Xem giá trên bảng đi."
+                },
+                {
+                    "speaker": "B",
+                    "cn": "挺便宜的，一公斤才十块钱。",
+                    "py": "Tǐng piányi de, yì gōngjīn cái shí kuài qián.",
+                    "vi": "Khá rẻ, một ki-lô-gam chỉ mười tệ."
+                },
+                {
+                    "speaker": "A",
+                    "cn": "钱不够了，可以用卡换钱吗？",
+                    "py": "Qián búgòu le, kěyǐ yòng kǎ huàn qián ma?",
+                    "vi": "Không đủ tiền rồi, có thể dùng thẻ đổi tiền không?"
+                },
+                {
+                    "speaker": "B",
+                    "cn": "可以，别忘了买筷子和一个礼物送给他。",
+                    "py": "Kěyǐ, bié wàngle mǎi kuàizi hé yí gè lǐwù sòng gěi tā.",
+                    "vi": "Được, đừng quên mua đũa và một món quà để tặng anh ấy."
+                }
+            ],
+            "fillBlanks": [
+                {
+                    "cn": "这家超市___。",
+                    "answer": "不错",
+                    "options": [
+                        "不错",
+                        "不够",
+                        "便宜",
+                        "客人"
+                    ],
+                    "vi": "Siêu thị này khá tốt."
+                },
+                {
+                    "cn": "挺___的，一公斤才十块钱。",
+                    "answer": "便宜",
+                    "options": [
+                        "便宜",
+                        "不错",
+                        "不够",
+                        "礼物"
+                    ],
+                    "vi": "Khá rẻ, một ki-lô-gam chỉ mười tệ."
+                },
+                {
+                    "cn": "钱不___了，可以用卡换钱吗？",
+                    "answer": "够",
+                    "options": [
+                        "够",
+                        "错",
+                        "换",
+                        "客"
+                    ],
+                    "vi": "Không đủ tiền rồi, có thể dùng thẻ đổi tiền không?"
+                }
+            ]
+        },
+        {
             "id": "congviec-01",
             "level": "congviec",
             "number": 1,
@@ -3207,856 +4057,6 @@
                         "响应"
                     ],
                     "vi": "Cấp xong nhớ backup database lại."
-                }
-            ]
-        },
-        {
-            "id": "hsk1-19",
-            "level": "hsk1",
-            "number": 19,
-            "title_vi": "Trợ từ ngữ pháp cơ bản",
-            "title_cn": "基本助词和否定",
-            "icon": "🔤",
-            "vocab": [
-                "吧",
-                "了",
-                "的",
-                "地",
-                "着",
-                "都",
-                "就",
-                "会",
-                "能",
-                "要",
-                "还是",
-                "还有",
-                "是不是",
-                "没",
-                "没有",
-                "没什么",
-                "没事儿",
-                "不",
-                "不大",
-                "不对",
-                "不用",
-                "对",
-                "再",
-                "在",
-                "在家",
-                "正",
-                "正在",
-                "和",
-                "们",
-                "有",
-                "有的",
-                "有些",
-                "有一些",
-                "有时",
-                "有时候",
-                "一样"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "你在家吗？还是在公司？",
-                    "py": "Nǐ zài jiā ma? Háishi zài gōngsī?",
-                    "vi": "Bạn ở nhà à? Hay là đang ở công ty?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "我在家，正在看书呢。",
-                    "py": "Wǒ zài jiā, zhèngzài kànshū ne.",
-                    "vi": "Tôi đang ở nhà, đang đọc sách đây."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "你有没有时间？我们出去走走吧。",
-                    "py": "Nǐ yǒu méiyǒu shíjiān? Wǒmen chūqù zǒuzou ba.",
-                    "vi": "Bạn có thời gian không? Chúng ta ra ngoài đi dạo đi."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "没事儿，我马上就来。",
-                    "py": "Méishìr, wǒ mǎshàng jiù lái.",
-                    "vi": "Không sao, tôi đến ngay đây."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "你们都到了吗？",
-                    "py": "Nǐmen dōu dào le ma?",
-                    "vi": "Các bạn đến hết chưa?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "还没有，有的人还没到，有些人已经到了。",
-                    "py": "Hái méiyǒu, yǒude rén hái méi dào, yǒuxiē rén yǐjīng dào le.",
-                    "vi": "Vẫn chưa, có người vẫn chưa đến, có người đã đến rồi."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "是不是又晚了？他们有时候不注意时间。",
-                    "py": "Shì bu shì yòu wǎn le? Tāmen yǒushíhou bú zhùyì shíjiān.",
-                    "vi": "Có phải lại muộn nữa không? Họ đôi khi không để ý giờ giấc."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "没关系，我们的想法一样，不用着急。",
-                    "py": "Méi guānxi, wǒmen de xiǎngfǎ yíyàng, búyòng zháojí.",
-                    "vi": "Không sao, suy nghĩ của chúng ta giống nhau, không cần vội."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "你在家吗？___在公司？",
-                    "answer": "还是",
-                    "options": [
-                        "还是",
-                        "还有",
-                        "是不是",
-                        "都"
-                    ],
-                    "vi": "Bạn ở nhà à? Hay là đang ở công ty?"
-                },
-                {
-                    "cn": "我在家，___看书呢。",
-                    "answer": "正在",
-                    "options": [
-                        "正在",
-                        "有时候",
-                        "一样",
-                        "不用"
-                    ],
-                    "vi": "Tôi đang ở nhà, đang đọc sách đây."
-                },
-                {
-                    "cn": "我们的想法___，不用着急。",
-                    "answer": "一样",
-                    "options": [
-                        "一样",
-                        "没事儿",
-                        "不大",
-                        "有的"
-                    ],
-                    "vi": "Suy nghĩ của chúng ta giống nhau, không cần vội."
-                }
-            ]
-        },
-        {
-            "id": "hsk1-20",
-            "level": "hsk1",
-            "number": 20,
-            "title_vi": "Trường học mở rộng & Quốc gia",
-            "title_cn": "学校和国家",
-            "icon": "🌏",
-            "vocab": [
-                "学院",
-                "小学",
-                "小学生",
-                "中学",
-                "中学生",
-                "教学楼",
-                "国",
-                "国家",
-                "国外",
-                "外国",
-                "外语",
-                "中国",
-                "中文",
-                "北京",
-                "认真",
-                "新年",
-                "中"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "你在哪个国家学习？",
-                    "py": "Nǐ zài nǎge guójiā xuéxí?",
-                    "vi": "Bạn học ở nước nào?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "我在中国北京，在一个学院学中文。",
-                    "py": "Wǒ zài Zhōngguó Běijīng, zài yí gè xuéyuàn xué Zhōngwén.",
-                    "vi": "Tôi ở Bắc Kinh, Trung Quốc, học tiếng Trung ở một học viện."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "你以前在中学还是小学学过外语？",
-                    "py": "Nǐ yǐqián zài zhōngxué háishi xiǎoxué xuéguo wàiyǔ?",
-                    "vi": "Trước đây bạn học ngoại ngữ ở trung học hay tiểu học vậy?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "中学。那时候我是中学生，学得很认真。",
-                    "py": "Zhōngxué. Nà shíhou wǒ shì zhōngxuéshēng, xué de hěn rènzhēn.",
-                    "vi": "Trung học. Lúc đó tôi là học sinh trung học, học rất nghiêm túc."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "教学楼在学校中间吗？",
-                    "py": "Jiàoxuélóu zài xuéxiào zhōngjiān ma?",
-                    "vi": "Tòa nhà học nằm giữa trường à?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "对，很多外国学生和小学生都在这里上课。",
-                    "py": "Duì, hěn duō wàiguó xuésheng hé xiǎoxuéshēng dōu zài zhèlǐ shàngkè.",
-                    "vi": "Đúng vậy, nhiều học sinh nước ngoài và học sinh tiểu học đều học ở đây."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "你想不想去国外看看？",
-                    "py": "Nǐ xiǎng bu xiǎng qù guówài kànkan?",
-                    "vi": "Bạn có muốn ra nước ngoài xem thử không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "想，新年的时候我打算回家，然后再去别的国家。",
-                    "py": "Xiǎng, xīnnián de shíhou wǒ dǎsuàn huíjiā, ránhòu zài qù biéde guójiā.",
-                    "vi": "Muốn chứ, dịp năm mới tôi định về nhà, rồi sau đó đi nước khác."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "我在中国北京，在一个___学中文。",
-                    "answer": "学院",
-                    "options": [
-                        "学院",
-                        "小学",
-                        "中学",
-                        "教学楼"
-                    ],
-                    "vi": "Tôi ở Bắc Kinh, Trung Quốc, học tiếng Trung ở một học viện."
-                },
-                {
-                    "cn": "很多___学生和小学生都在这里上课。",
-                    "answer": "外国",
-                    "options": [
-                        "外国",
-                        "中国",
-                        "国家",
-                        "外语"
-                    ],
-                    "vi": "Nhiều học sinh nước ngoài và học sinh tiểu học đều học ở đây."
-                },
-                {
-                    "cn": "你想不想去___看看？",
-                    "answer": "国外",
-                    "options": [
-                        "国外",
-                        "中文",
-                        "北京",
-                        "国家"
-                    ],
-                    "vi": "Bạn có muốn ra nước ngoài xem thử không?"
-                }
-            ]
-        },
-        {
-            "id": "hsk1-21",
-            "level": "hsk1",
-            "number": 21,
-            "title_vi": "Thời gian & Số lượng bổ sung",
-            "title_cn": "时间和数量补充",
-            "icon": "📅",
-            "vocab": [
-                "半年",
-                "半天",
-                "次",
-                "第",
-                "第二",
-                "一半",
-                "一边",
-                "一点儿",
-                "一会儿",
-                "一块儿",
-                "一下儿",
-                "一些",
-                "年",
-                "月",
-                "日",
-                "日期",
-                "上次",
-                "下次",
-                "马上",
-                "最",
-                "最好",
-                "最后",
-                "常",
-                "常常",
-                "从",
-                "先"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "这是你第一次来这儿吗？",
-                    "py": "Zhè shì nǐ dì yī cì lái zhèr ma?",
-                    "vi": "Đây là lần đầu tiên bạn đến đây à?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "不是，我上次也来过，从去年就常来了。",
-                    "py": "Bú shì, wǒ shàngcì yě láiguò, cóng qùnián jiù cháng lái le.",
-                    "vi": "Không phải, lần trước tôi cũng đến rồi, từ năm ngoái tôi đã hay đến."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "你常常一个人来吗？",
-                    "py": "Nǐ chángcháng yí gè rén lái ma?",
-                    "vi": "Bạn có thường một mình đến không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "不，我一般和朋友一块儿来。",
-                    "py": "Bù, wǒ yìbān hé péngyou yíkuàir lái.",
-                    "vi": "Không, tôi thường cùng bạn bè đến."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "我们等一会儿再走，好吗？",
-                    "py": "Wǒmen děng yíhuìr zài zǒu, hǎo ma?",
-                    "vi": "Chúng ta đợi một lát rồi hãy đi, được không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "好，你先看一下儿地图，我们最好从这条路走。",
-                    "py": "Hǎo, nǐ xiān kàn yíxiàr dìtú, wǒmen zuìhǎo cóng zhè tiáo lù zǒu.",
-                    "vi": "Được, bạn xem bản đồ một chút trước, chúng ta nên đi theo đường này thì tốt hơn."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "下次是什么日期？我记一下第二次的时间。",
-                    "py": "Xiàcì shì shénme rìqī? Wǒ jì yíxià dì èr cì de shíjiān.",
-                    "vi": "Lần sau là ngày nào? Để tôi ghi lại thời gian lần thứ hai."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "下个月一号，我们半天就能到，最后一起吃饭。",
-                    "py": "Xià gè yuè yī hào, wǒmen bàntiān jiù néng dào, zuìhòu yìqǐ chīfàn.",
-                    "vi": "Mùng một tháng sau, chúng ta chỉ mất nửa ngày là đến nơi, cuối cùng cùng nhau ăn cơm."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "这是你___一次来这儿吗？",
-                    "answer": "第",
-                    "options": [
-                        "第",
-                        "次",
-                        "一半",
-                        "一些"
-                    ],
-                    "vi": "Đây là lần đầu tiên bạn đến đây à?"
-                },
-                {
-                    "cn": "我们等___再走，好吗？",
-                    "answer": "一会儿",
-                    "options": [
-                        "一会儿",
-                        "一下儿",
-                        "一点儿",
-                        "一块儿"
-                    ],
-                    "vi": "Chúng ta đợi một lát rồi hãy đi, được không?"
-                },
-                {
-                    "cn": "我们___从这条路走。",
-                    "answer": "最好",
-                    "options": [
-                        "最好",
-                        "最后",
-                        "常常",
-                        "马上"
-                    ],
-                    "vi": "Chúng ta nên đi theo đường này thì tốt hơn."
-                }
-            ]
-        },
-        {
-            "id": "hsk1-22",
-            "level": "hsk1",
-            "number": 22,
-            "title_vi": "Động từ & Tính từ bổ sung",
-            "title_cn": "补充动词和形容词",
-            "icon": "🧩",
-            "vocab": [
-                "帮",
-                "帮忙",
-                "比",
-                "差",
-                "错",
-                "得到",
-                "等",
-                "动",
-                "动作",
-                "放假",
-                "放学",
-                "干",
-                "干什么",
-                "见",
-                "见面",
-                "明白",
-                "试",
-                "事",
-                "手",
-                "行",
-                "重",
-                "子",
-                "少",
-                "多",
-                "个",
-                "口",
-                "间",
-                "有名",
-                "有用",
-                "那边",
-                "这边",
-                "上",
-                "上车",
-                "上学",
-                "下",
-                "下车",
-                "生日",
-                "班",
-                "白",
-                "号",
-                "话",
-                "工人",
-                "地点",
-                "地方",
-                "地上"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "你在干什么？需要帮忙吗？",
-                    "py": "Nǐ zài gàn shénme? Xūyào bāngmáng ma?",
-                    "vi": "Bạn đang làm gì vậy? Có cần giúp không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "我在等一个电话，我们班明天放假。",
-                    "py": "Wǒ zài děng yí gè diànhuà, wǒmen bān míngtiān fàngjià.",
-                    "vi": "Tôi đang đợi một cuộc điện thoại, lớp mình mai được nghỉ."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "真的吗？那我们下午几点见面？",
-                    "py": "Zhēnde ma? Nà wǒmen xiàwǔ jǐ diǎn jiànmiàn?",
-                    "vi": "Thật á? Vậy chiều nay mấy giờ chúng ta gặp mặt?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "三点吧，地点在那边，不在这边。",
-                    "py": "Sān diǎn ba, dìdiǎn zài nàbiān, bú zài zhèbiān.",
-                    "vi": "Ba giờ nhé, địa điểm ở bên kia, không phải bên này."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "好，我放学以后上车过去。",
-                    "py": "Hǎo, wǒ fàngxué yǐhòu shàngchē guòqù.",
-                    "vi": "Được, tôi tan học xong lên xe đến đó."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "明白了。到了以后下车，那个地方很有名。",
-                    "py": "Míngbai le. Dàole yǐhòu xiàchē, nàge dìfāng hěn yǒumíng.",
-                    "vi": "Hiểu rồi. Đến nơi thì xuống xe, chỗ đó rất nổi tiếng."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "对了，今天是我的生日，想请工人师傅们吃饭。",
-                    "py": "Duì le, jīntiān shì wǒ de shēngrì, xiǎng qǐng gōngrén shīfumen chīfàn.",
-                    "vi": "À đúng rồi, hôm nay là sinh nhật tôi, muốn mời các bác công nhân ăn cơm."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "行，这个主意很有用，大家都会很高兴。",
-                    "py": "Xíng, zhège zhǔyi hěn yǒuyòng, dàjiā dōu huì hěn gāoxìng.",
-                    "vi": "Được đấy, ý này rất hay, mọi người sẽ rất vui."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "你在___？需要帮忙吗？",
-                    "answer": "干什么",
-                    "options": [
-                        "干什么",
-                        "放学",
-                        "上学",
-                        "见面"
-                    ],
-                    "vi": "Bạn đang làm gì vậy? Có cần giúp không?"
-                },
-                {
-                    "cn": "地点在那边，不在___。",
-                    "answer": "这边",
-                    "options": [
-                        "这边",
-                        "那边",
-                        "地上",
-                        "地方"
-                    ],
-                    "vi": "Địa điểm ở bên kia, không phải bên này."
-                },
-                {
-                    "cn": "这个主意很___，大家都会很高兴。",
-                    "answer": "有用",
-                    "options": [
-                        "有用",
-                        "有名",
-                        "明白",
-                        "得到"
-                    ],
-                    "vi": "Ý này rất hay, mọi người sẽ rất vui."
-                }
-            ]
-        },
-        {
-            "id": "hsk2-01",
-            "level": "hsk2",
-            "number": 1,
-            "title_vi": "Cảm xúc & Liên từ cơ bản",
-            "title_cn": "感觉和基本连词",
-            "icon": "😊",
-            "vocab": [
-                "感觉",
-                "感到",
-                "感动",
-                "感谢",
-                "开心",
-                "快乐",
-                "放心",
-                "哭",
-                "关心",
-                "好像",
-                "可怕",
-                "可爱",
-                "难过",
-                "忽然",
-                "故意",
-                "然后",
-                "虽然",
-                "但是",
-                "所以",
-                "因为"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "你今天看起来不开心，怎么了？",
-                    "py": "Nǐ jīntiān kàn qǐlái bù kāixīn, zěnme le?",
-                    "vi": "Hôm nay bạn trông có vẻ không vui, sao vậy?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "因为工作太多了，所以我感到很累。",
-                    "py": "Yīnwèi gōngzuò tài duō le, suǒyǐ wǒ gǎndào hěn lèi.",
-                    "vi": "Vì công việc quá nhiều nên tôi cảm thấy rất mệt."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "虽然工作多，但是你别难过，我们可以帮你。",
-                    "py": "Suīrán gōngzuò duō, dànshì nǐ bié nánguò, wǒmen kěyǐ bāng nǐ.",
-                    "vi": "Tuy công việc nhiều nhưng bạn đừng buồn, chúng tôi có thể giúp bạn."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "真的吗？谢谢你们的关心，我很感动。",
-                    "py": "Zhēnde ma? Xièxie nǐmen de guānxīn, wǒ hěn gǎndòng.",
-                    "vi": "Thật à? Cảm ơn sự quan tâm của các bạn, tôi rất cảm động."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "别哭了，先放心休息一下吧。",
-                    "py": "Bié kū le, xiān fàngxīn xiūxi yíxià ba.",
-                    "vi": "Đừng khóc nữa, cứ yên tâm nghỉ ngơi một chút trước đã."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "好，然后我们一起想办法解决问题。",
-                    "py": "Hǎo, ránhòu wǒmen yìqǐ xiǎng bànfǎ jiějué wèntí.",
-                    "vi": "Được, sau đó chúng ta cùng nghĩ cách giải quyết vấn đề."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "忽然想起来，你不是故意迟到的吧？",
-                    "py": "Hūrán xiǎngqǐlái, nǐ bú shì gùyì chídào de ba?",
-                    "vi": "Chợt nhớ ra, bạn không phải cố ý đến muộn đấy chứ?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "当然不是，我好像忘了看时间。",
-                    "py": "Dāngrán bú shì, wǒ hǎoxiàng wàngle kàn shíjiān.",
-                    "vi": "Đương nhiên không, hình như tôi quên xem giờ."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "___工作太多了，所以我感到很累。",
-                    "answer": "因为",
-                    "options": [
-                        "因为",
-                        "但是",
-                        "然后",
-                        "故意"
-                    ],
-                    "vi": "Vì công việc quá nhiều nên tôi cảm thấy rất mệt."
-                },
-                {
-                    "cn": "虽然工作多，___你别难过。",
-                    "answer": "但是",
-                    "options": [
-                        "但是",
-                        "所以",
-                        "因为",
-                        "好像"
-                    ],
-                    "vi": "Tuy công việc nhiều nhưng bạn đừng buồn."
-                },
-                {
-                    "cn": "谢谢你们的关心，我很___。",
-                    "answer": "感动",
-                    "options": [
-                        "感动",
-                        "放心",
-                        "开心",
-                        "难过"
-                    ],
-                    "vi": "Cảm ơn sự quan tâm của các bạn, tôi rất cảm động."
-                }
-            ]
-        },
-        {
-            "id": "hsk2-02",
-            "level": "hsk2",
-            "number": 2,
-            "title_vi": "Công sở & Sự nghiệp",
-            "title_cn": "公司和事业",
-            "icon": "🏢",
-            "vocab": [
-                "公司",
-                "经理",
-                "同事",
-                "办公室",
-                "打工",
-                "机会",
-                "计划",
-                "成绩",
-                "成为",
-                "教育",
-                "交通",
-                "加油",
-                "复习",
-                "考生",
-                "教师",
-                "健康",
-                "讨论",
-                "原来",
-                "越来越",
-                "刚刚"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "你刚刚说的那个公司在哪儿？",
-                    "py": "Nǐ gānggang shuō de nàge gōngsī zài nǎr?",
-                    "vi": "Cái công ty bạn vừa nói đến ở đâu vậy?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "在市中心，我同事的办公室就在那儿。",
-                    "py": "Zài shìzhōngxīn, wǒ tóngshì de bàngōngshì jiù zài nàr.",
-                    "vi": "Ở trung tâm thành phố, văn phòng của đồng nghiệp tôi ở đó."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "原来是这样，交通方便吗？",
-                    "py": "Yuánlái shì zhèyàng, jiāotōng fāngbiàn ma?",
-                    "vi": "Ra là vậy, giao thông có tiện không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "很方便。我的计划是明年也去那家公司打工。",
-                    "py": "Hěn fāngbiàn. Wǒ de jìhuà shì míngnián yě qù nà jiā gōngsī dǎgōng.",
-                    "vi": "Rất tiện. Kế hoạch của tôi là sang năm cũng đi làm thêm ở công ty đó."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "那你要多复习，成绩越来越好才有机会。",
-                    "py": "Nà nǐ yào duō fùxí, chéngjì yuèláiyuè hǎo cái yǒu jīhuì.",
-                    "vi": "Vậy bạn phải ôn tập nhiều, thành tích ngày càng tốt thì mới có cơ hội."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "是啊，我想成为一个好的经理。",
-                    "py": "Shì a, wǒ xiǎng chéngwéi yí gè hǎo de jīnglǐ.",
-                    "vi": "Đúng vậy, tôi muốn trở thành một quản lý tốt."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "教师说过，健康和教育都很重要。",
-                    "py": "Jiàoshī shuōguo, jiànkāng hé jiàoyù dōu hěn zhòngyào.",
-                    "vi": "Thầy giáo từng nói, sức khỏe và giáo dục đều rất quan trọng."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "对，考生们也应该讨论一下未来的计划。加油！",
-                    "py": "Duì, kǎoshēngmen yě yīnggāi tǎolùn yíxià wèilái de jìhuà. Jiāyóu!",
-                    "vi": "Đúng vậy, các thí sinh cũng nên thảo luận về kế hoạch tương lai. Cố lên!"
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "我的___是明年也去那家公司打工。",
-                    "answer": "计划",
-                    "options": [
-                        "计划",
-                        "机会",
-                        "成绩",
-                        "健康"
-                    ],
-                    "vi": "Kế hoạch của tôi là sang năm cũng đi làm thêm ở công ty đó."
-                },
-                {
-                    "cn": "成绩___好才有机会。",
-                    "answer": "越来越",
-                    "options": [
-                        "越来越",
-                        "原来",
-                        "刚刚",
-                        "故意"
-                    ],
-                    "vi": "Thành tích ngày càng tốt thì mới có cơ hội."
-                },
-                {
-                    "cn": "我想___一个好的经理。",
-                    "answer": "成为",
-                    "options": [
-                        "成为",
-                        "成绩",
-                        "计划",
-                        "教育"
-                    ],
-                    "vi": "Tôi muốn trở thành một quản lý tốt."
-                }
-            ]
-        },
-        {
-            "id": "hsk2-03",
-            "level": "hsk2",
-            "number": 3,
-            "title_vi": "Siêu thị & Mua sắm mở rộng",
-            "title_cn": "超市和购物",
-            "icon": "🛒",
-            "vocab": [
-                "超市",
-                "便宜",
-                "不错",
-                "够",
-                "不够",
-                "菜单",
-                "筷子",
-                "快餐",
-                "饺子",
-                "公斤",
-                "克",
-                "斤",
-                "角",
-                "换",
-                "卡",
-                "礼物",
-                "客人",
-                "酒",
-                "酒店",
-                "老朋友",
-                "交朋友"
-            ],
-            "dialogue": [
-                {
-                    "speaker": "A",
-                    "cn": "我们去超市买点儿东西吧，晚上有客人来。",
-                    "py": "Wǒmen qù chāoshì mǎi diǎnr dōngxi ba, wǎnshang yǒu kèrén lái.",
-                    "vi": "Chúng ta đi siêu thị mua chút đồ nhé, tối nay có khách đến."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "好啊，是老朋友吗？",
-                    "py": "Hǎo a, shì lǎo péngyou ma?",
-                    "vi": "Được đấy, là bạn cũ à?"
-                },
-                {
-                    "speaker": "A",
-                    "cn": "对，我们在国外交朋友认识的，很久没见了。",
-                    "py": "Duì, wǒmen zài guówài jiāo péngyou rènshi de, hěn jiǔ méi jiàn le.",
-                    "vi": "Đúng vậy, chúng tôi quen nhau lúc kết bạn ở nước ngoài, lâu rồi không gặp."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "那我们买点儿饺子和一瓶酒吧，这家超市不错。",
-                    "py": "Nà wǒmen mǎi diǎnr jiǎozi hé yì píng jiǔ ba, zhè jiā chāoshì búcuò.",
-                    "vi": "Vậy chúng ta mua ít sủi cảo và một chai rượu đi, siêu thị này khá tốt."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "这个多少钱一斤？看看菜单价格。",
-                    "py": "Zhège duōshǎo qián yì jīn? Kànkan càidān jiàgé.",
-                    "vi": "Cái này bao nhiêu tiền một cân? Xem giá trên bảng đi."
-                },
-                {
-                    "speaker": "B",
-                    "cn": "挺便宜的，一公斤才十块钱。",
-                    "py": "Tǐng piányi de, yì gōngjīn cái shí kuài qián.",
-                    "vi": "Khá rẻ, một ki-lô-gam chỉ mười tệ."
-                },
-                {
-                    "speaker": "A",
-                    "cn": "钱不够了，可以用卡换钱吗？",
-                    "py": "Qián búgòu le, kěyǐ yòng kǎ huàn qián ma?",
-                    "vi": "Không đủ tiền rồi, có thể dùng thẻ đổi tiền không?"
-                },
-                {
-                    "speaker": "B",
-                    "cn": "可以，别忘了买筷子和一个礼物送给他。",
-                    "py": "Kěyǐ, bié wàngle mǎi kuàizi hé yí gè lǐwù sòng gěi tā.",
-                    "vi": "Được, đừng quên mua đũa và một món quà để tặng anh ấy."
-                }
-            ],
-            "fillBlanks": [
-                {
-                    "cn": "这家超市___。",
-                    "answer": "不错",
-                    "options": [
-                        "不错",
-                        "不够",
-                        "便宜",
-                        "客人"
-                    ],
-                    "vi": "Siêu thị này khá tốt."
-                },
-                {
-                    "cn": "挺___的，一公斤才十块钱。",
-                    "answer": "便宜",
-                    "options": [
-                        "便宜",
-                        "不错",
-                        "不够",
-                        "礼物"
-                    ],
-                    "vi": "Khá rẻ, một ki-lô-gam chỉ mười tệ."
-                },
-                {
-                    "cn": "钱不___了，可以用卡换钱吗？",
-                    "answer": "够",
-                    "options": [
-                        "够",
-                        "错",
-                        "换",
-                        "客"
-                    ],
-                    "vi": "Không đủ tiền rồi, có thể dùng thẻ đổi tiền không?"
                 }
             ]
         }

@@ -92,21 +92,8 @@
 
 
       <!-- THÊM: Nút chọn nhanh cấp độ -->
-      <div class="level-quick-nav">
-
-        <button class="level-quick-btn active" data-level="hsk1">
-          HSK 1
-        </button>
-
-        <button class="level-quick-btn" data-level="hsk2">
-          HSK 2
-        </button>
-
-        <button class="level-quick-btn" data-level="hsk3">
-          HSK 3
-        </button>
-
-      </div>
+      <!-- Nút chọn nhanh cấp độ - load động từ lessons.json -->
+      <div class="level-quick-nav" id="levelQuickNav"></div>
 
 
       <div id="lessonsWrap"></div>
@@ -127,284 +114,502 @@
   <script>
 
     async function loadLessons() {
-
       const res = await fetch('data/lessons.json');
-
       const data = await res.json();
-
       return data.lessons;
-
     }
 
 
     function lessonProgress(lesson) {
-
       const p = getProgress();
-
       const hanziList = lessonHanziList(lesson);
 
-      const known = hanziList.filter(h => p.known[h]).length;
+      const known = hanziList.filter(
+        h => p.known[h]
+      ).length;
 
-      return { known, total: hanziList.length };
-
+      return {
+        known,
+        total: hanziList.length
+      };
     }
 
+
+    /*
+    =========================================================
+    TẠO MENU LEVEL ĐỘNG
+    =========================================================
+    */
+
+    function createLevelMenus(levels) {
+
+      const levelQuickNav =
+        document.getElementById('levelQuickNav');
+
+      const floatingLevelMenu =
+        document.getElementById('floatingLevelMenu');
+
+
+      /*
+      -----------------------------------------------------
+      MENU PHÍA TRÊN
+      -----------------------------------------------------
+      */
+
+      levelQuickNav.innerHTML = levels.map(level => {
+
+        const label =
+          LEVEL_LABEL[level] || level.toUpperCase();
+
+        return `
+                <button
+                    class="level-quick-btn"
+                    type="button"
+                    data-level="${level}"
+                >
+                    ${label}
+                </button>
+            `;
+
+      }).join('');
+
+
+      /*
+      -----------------------------------------------------
+      FLOATING MENU
+      -----------------------------------------------------
+      */
+
+      floatingLevelMenu.innerHTML = levels.map(level => {
+
+        const label =
+          LEVEL_LABEL[level] || level.toUpperCase();
+
+        return `
+                <button
+                    type="button"
+                    data-level="${level}"
+                >
+                    ${label}
+                </button>
+            `;
+
+      }).join('');
+
+
+      /*
+      -----------------------------------------------------
+      MẶC ĐỊNH CHỌN LEVEL ĐẦU TIÊN
+      -----------------------------------------------------
+      */
+
+      if (levels.length > 0) {
+
+        const firstLevel = levels[0];
+
+        const firstButton =
+          levelQuickNav.querySelector(
+            `[data-level="${firstLevel}"]`
+          );
+
+        if (firstButton) {
+          firstButton.classList.add('active');
+        }
+      }
+
+
+      /*
+      -----------------------------------------------------
+      GẮN EVENT CHO MENU
+      -----------------------------------------------------
+      */
+
+      setupLevelEvents();
+    }
+
+
+
+    /*
+    =========================================================
+    XỬ LÝ CLICK LEVEL
+    =========================================================
+    */
+
+    function setupLevelEvents() {
+
+      const levelQuickNav =
+        document.getElementById('levelQuickNav');
+
+      const floatingLevel =
+        document.getElementById('floatingLevel');
+
+      const floatingLevelBtn =
+        document.getElementById('floatingLevelBtn');
+
+      const floatingLevelMenu =
+        document.getElementById('floatingLevelMenu');
+
+
+      /*
+      -----------------------------------------------------
+      CLICK MENU PHÍA TRÊN
+      -----------------------------------------------------
+      */
+
+      levelQuickNav
+        .querySelectorAll('.level-quick-btn')
+        .forEach(button => {
+
+          button.addEventListener('click', () => {
+
+            const level =
+              button.dataset.level;
+
+            scrollToLevel(level);
+
+            setActiveLevel(level);
+
+          });
+
+        });
+
+
+      /*
+      -----------------------------------------------------
+      THEO DÕI THANH LEVEL PHÍA TRÊN
+      -----------------------------------------------------
+      */
+
+      const observer =
+        new IntersectionObserver(
+          entries => {
+
+            entries.forEach(entry => {
+
+              if (!entry.isIntersecting) {
+
+                floatingLevel.classList.add('show');
+
+              } else {
+
+                floatingLevel.classList.remove('show');
+
+                floatingLevelMenu
+                  .classList.remove('open');
+              }
+
+            });
+
+          },
+          {
+            threshold: 0
+          }
+        );
+
+
+      observer.observe(levelQuickNav);
+
+
+      /*
+      -----------------------------------------------------
+      CLICK NÚT FLOATING
+      -----------------------------------------------------
+      */
+
+      floatingLevelBtn.addEventListener(
+        'click',
+        () => {
+
+          floatingLevelMenu
+            .classList.toggle('open');
+
+        }
+      );
+
+
+      /*
+      -----------------------------------------------------
+      CLICK LEVEL TRONG FLOATING MENU
+      -----------------------------------------------------
+      */
+
+      floatingLevelMenu
+        .querySelectorAll('button')
+        .forEach(button => {
+
+          button.addEventListener('click', () => {
+
+            const level =
+              button.dataset.level;
+
+            scrollToLevel(level);
+
+            setActiveLevel(level);
+
+            floatingLevelMenu
+              .classList.remove('open');
+
+          });
+
+        });
+    }
+
+
+
+    /*
+    =========================================================
+    SCROLL ĐẾN LEVEL
+    =========================================================
+    */
+
+    function scrollToLevel(level) {
+
+      const target =
+        document.getElementById(
+          `level-${level}`
+        );
+
+
+      if (!target) {
+
+        console.warn(
+          `Không tìm thấy level: ${level}`
+        );
+
+        return;
+      }
+
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+
+
+    /*
+    =========================================================
+    ACTIVE LEVEL
+    =========================================================
+    */
+
+    function setActiveLevel(level) {
+
+      const levelQuickNav =
+        document.getElementById('levelQuickNav');
+
+
+      levelQuickNav
+        .querySelectorAll('.level-quick-btn')
+        .forEach(button => {
+
+          button.classList.toggle(
+            'active',
+            button.dataset.level === level
+          );
+
+        });
+    }
+
+
+
+    /*
+    =========================================================
+    INIT
+    =========================================================
+    */
 
     async function init() {
 
       const lessons = await loadLessons();
 
+
+      /*
+      =====================================================
+      CODE LOAD BÀI HỌC CŨ
+      =====================================================
+      */
+
       const byLevel = {};
 
+
       lessons.forEach(l => {
-        (byLevel[l.level] = byLevel[l.level] || []).push(l);
+
+        (
+          byLevel[l.level] =
+          byLevel[l.level] || []
+        ).push(l);
+
       });
 
 
-      const wrap = document.getElementById('lessonsWrap');
+      const wrap =
+        document.getElementById(
+          'lessonsWrap'
+        );
 
 
-      wrap.innerHTML = Object.keys(byLevel).map(level => `
-
-        <!-- CHỈ THÊM id để nút có thể scroll tới -->
-        <div
-          id="level-${level}"
-          style="margin-bottom:36px; scroll-margin-top:20px;"
-        >
-
-          <h2 style="font-size:18px; margin-bottom:16px;">
-            ${LEVEL_LABEL[level] || level}
-          </h2>
-
-
-          <div class="lesson-grid">
-
-            ${byLevel[level].map(l => {
-
-        const prog = lessonProgress(l);
-
-        return `
-
-                <a class="lesson-card" href="lesson.html?id=${l.id}">
-
-                  <div class="num-badge">
-                    Bài ${l.number}
-                  </div>
-
-                  <div class="icon">
-                    ${l.icon}
-                  </div>
-
-                  <h3>
-                    ${l.title_vi}
-                  </h3>
-
-                  <div class="cn-title">
-                    ${l.title_cn}
-                  </div>
-
-                  <div class="meta">
-
-                    <span>
-                      📖 ${l.vocab.length} từ mới
-                    </span>
-
-                    <span>
-                      💬 ${l.dialogue.length} câu hội thoại
-                    </span>
-
-                  </div>
-
-
-                  <div
-                    class="bar-track"
-                    style="
-                      margin-top:10px;
-                      background:var(--paper-alt);
-                    "
-                  >
+      wrap.innerHTML =
+        Object.keys(byLevel)
+          .map(level => `
 
                     <div
-                      class="bar-fill"
-                      style="
-                        width:${l.vocab.length
-            ? Math.round(prog.known / l.vocab.length * 100)
-            : 0}%;
-                        background:var(--jade);
-                      "
-                    ></div>
+                        id="level-${level}"
+                        style="
+                            margin-bottom:36px;
+                            scroll-margin-top:20px;
+                        "
+                    >
 
-                  </div>
+                        <h2
+                            style="
+                                font-size:18px;
+                                margin-bottom:16px;
+                            "
+                        >
+                            ${LEVEL_LABEL[level] || level}
+                        </h2>
 
-                </a>
 
-              `;
+                        <div class="lesson-grid">
 
-      }).join('')}
+                            ${byLevel[level]
+              .map(l => {
 
-          </div>
+                const prog =
+                  lessonProgress(l);
 
-        </div>
 
-      `).join('') + `
+                return `
 
-        <div class="callout" style="max-width:640px;">
+                                        <a
+                                            class="lesson-card"
+                                            href="lesson.html?id=${l.id}"
+                                        >
 
-          <strong>HSK1 đã hoàn thành!</strong>
-          22 bài học phủ 100% từ vựng HSK1 (506/506 từ).
+                                            <div class="num-badge">
+                                                Bài ${l.number}
+                                            </div>
 
-          Ngoài ra còn có mục
-          <strong>Chuyên ngành: CNTT & Sản xuất</strong>
-          ở trên.
 
-          Tiếp theo sẽ là các bài học HSK2 và HSK3 —
-          đang được biên soạn dần.
+                                            <div class="icon">
+                                                ${l.icon}
+                                            </div>
 
-        </div>
 
-      `;
+                                            <h3>
+                                                ${l.title_vi}
+                                            </h3>
 
 
-      /* =========================
-         THÊM: XỬ LÝ NÚT HSK
-      ========================= */
+                                            <div class="cn-title">
+                                                ${l.title_cn}
+                                            </div>
 
-      const levelButtons = document.querySelectorAll('.level-quick-btn');
 
-      levelButtons.forEach(button => {
+                                            <div class="meta">
 
-        button.addEventListener('click', () => {
+                                                <span>
+                                                    📖
+                                                    ${l.vocab.length}
+                                                    từ mới
+                                                </span>
 
-          const level = button.dataset.level;
-          console.log(`Đang scroll tới ${level}...`);
-          const target = document.getElementById(`level-${level}`);
+                                                <span>
+                                                    💬
+                                                    ${l.dialogue.length}
+                                                    câu hội thoại
+                                                </span>
 
+                                            </div>
 
-          // Nếu level chưa có bài trong lessons.json
-          if (!target) {
 
-            alert(`${level} hiện chưa có bài học.`);
+                                            <div
+                                                class="bar-track"
+                                                style="
+                                                    margin-top:10px;
+                                                    background:var(--paper-alt);
+                                                "
+                                            >
 
-            return;
+                                                <div
+                                                    class="bar-fill"
+                                                    style="
+                                                        width:${l.vocab.length
+                    ? Math.round(
+                      prog.known /
+                      l.vocab.length *
+                      100
+                    )
+                    : 0
+                  }%;
+                                                        background:var(--jade);
+                                                    "
+                                                ></div>
 
-          }
+                                            </div>
 
+                                        </a>
 
-          // Scroll mượt tới level
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
+                                    `;
 
+              })
+              .join('')}
 
-          // Đổi trạng thái active
-          levelButtons.forEach(btn => {
-            btn.classList.remove('active');
-          });
+                        </div>
 
-          button.classList.add('active');
+                    </div>
 
-        });
+                `)
+          .join('') + `
 
-      });
-      /* =========================
-   FLOATING LEVEL BUTTON
-========================= */
+                    <div
+                        class="callout"
+                        style="max-width:640px;"
+                    >
 
-      const levelQuickNav = document.querySelector('.level-quick-nav');
+                        <strong>
+                            HSK1 đã hoàn thành!
+                        </strong>
 
-      const floatingLevel = document.getElementById('floatingLevel');
+                        22 bài học phủ 100% từ vựng HSK1
+                        (506/506 từ).
 
-      const floatingLevelBtn = document.getElementById('floatingLevelBtn');
+                        Ngoài ra còn có mục
+                        <strong>
+                            Chuyên ngành: CNTT & Sản xuất
+                        </strong>
+                        ở trên.
 
-      const floatingLevelMenu = document.getElementById('floatingLevelMenu');
+                        Tiếp theo sẽ là các bài học HSK2 và HSK3 —
+                        đang được biên soạn dần.
 
+                    </div>
 
-      // Theo dõi thanh HSK phía trên
-      const observer = new IntersectionObserver(
-        entries => {
+                `;
 
-          entries.forEach(entry => {
 
-            // Nếu thanh HSK không còn nhìn thấy
-            if (!entry.isIntersecting) {
+      /*
+      =====================================================
+      THÊM MỚI:
+      TẠO MENU HSK TỪ JSON
+      =====================================================
+      */
 
-              floatingLevel.classList.add('show');
+      const levels =
+        Object.keys(byLevel);
 
-            } else {
 
-              floatingLevel.classList.remove('show');
-
-              floatingLevelMenu.classList.remove('open');
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0
-        }
-      );
-
-
-      // Bắt đầu theo dõi
-      observer.observe(levelQuickNav);
-
-
-      // Click mở menu
-      floatingLevelBtn.addEventListener('click', () => {
-
-        floatingLevelMenu.classList.toggle('open');
-
-      });
-
-
-      // Click chọn HSK
-      document.querySelectorAll('.floating-level-menu button').forEach(button => {
-
-        button.addEventListener('click', () => {
-
-          const level = button.dataset.level;
-
-          const target = document.getElementById(`level-${level}`);
-
-
-          if (!target) {
-
-            alert(`${level} hiện chưa có bài học.`);
-
-            return;
-
-          }
-
-
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
-
-          // Đóng menu
-          floatingLevelMenu.classList.remove('open');
-
-
-          // Update nút chính phía trên
-          levelButtons.forEach(btn => {
-
-            btn.classList.toggle(
-              'active',
-              btn.dataset.level === level
-            );
-
-          });
-
-        });
-
-      });
-
+      createLevelMenus(levels);
     }
 
+
+    /*
+    =========================================================
+    CHẠY
+    =========================================================
+    */
 
     init();
 
@@ -420,21 +625,7 @@
     ☰
   </button>
 
-  <div class="floating-level-menu" id="floatingLevelMenu">
-
-    <button type="button" data-level="hsk1">
-      HSK 1
-    </button>
-
-    <button type="button" data-level="hsk2">
-      HSK 2
-    </button>
-
-    <button type="button" data-level="hsk3">
-      HSK 3
-    </button>
-
-  </div>
+  <div class="floating-level-menu" id="floatingLevelMenu"></div>
 
 </div>
 
