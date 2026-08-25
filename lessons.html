@@ -1,87 +1,441 @@
 <!DOCTYPE html>
+
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Học HSK — Bài học</title>
-<link rel="icon" href="data:,">
-<link rel="stylesheet" href="css/style.css">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Học HSK — Bài học</title>
+
+  <link rel="icon" href="data:,">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS chỉ dành cho nút chọn nhanh cấp độ -->
+  <style>
+    .level-quick-nav {
+      display: flex;
+      gap: 10px;
+      margin: 0 0 28px;
+      padding: 6px;
+      background: var(--paper-alt);
+      border-radius: 14px;
+      width: fit-content;
+    }
+
+    .level-quick-btn {
+      border: none;
+      background: transparent;
+      padding: 10px 22px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .level-quick-btn:hover {
+      background: rgba(0, 0, 0, 0.06);
+    }
+
+    .level-quick-btn.active {
+      background: var(--jade);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+
+      .level-quick-nav {
+        width: 100%;
+      }
+
+      .level-quick-btn {
+        flex: 1;
+        padding: 10px 8px;
+      }
+
+    }
+  </style>
+
 </head>
-<body data-page="lessons" data-navhint='Mỗi bài học gồm Từ mới — Hội thoại — Bài tập, giống cấu trúc giáo trình HSK truyền thống.'>
 
-<div class="app-shell">
-  <aside class="sidebar" id="sidebarSlot"></aside>
+<body data-page="lessons"
+  data-navhint="Mỗi bài học gồm Từ mới — Hội thoại — Bài tập, giống cấu trúc giáo trình HSK truyền thống.">
 
-  <main class="main">
-    <div class="page-head">
-      <div>
-        <span class="eyebrow">Giáo trình theo chủ đề</span>
-        <h1>Bài học</h1>
-        <p class="sub">Học theo từng bài chủ đề thay vì từ vựng rời rạc — mỗi bài có từ mới, hội thoại thực tế và bài tập riêng.</p>
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebarSlot"></aside>
+
+    <main class="main">
+
+      <div class="page-head">
+
+        <div>
+
+          <span class="eyebrow">Giáo trình theo chủ đề</span>
+
+          <h1>Bài học</h1>
+
+          <p class="sub">
+            Học theo từng bài chủ đề thay vì từ vựng rời rạc — mỗi bài có từ mới,
+            hội thoại thực tế và bài tập riêng.
+          </p>
+
+        </div>
+
       </div>
-    </div>
 
-    <div id="lessonsWrap"></div>
-  </main>
+
+      <!-- THÊM: Nút chọn nhanh cấp độ -->
+      <div class="level-quick-nav">
+
+        <button class="level-quick-btn active" data-level="hsk1">
+          HSK 1
+        </button>
+
+        <button class="level-quick-btn" data-level="hsk2">
+          HSK 2
+        </button>
+
+        <button class="level-quick-btn" data-level="hsk3">
+          HSK 3
+        </button>
+
+      </div>
+
+
+      <div id="lessonsWrap"></div>
+
+    </main>
+
+  </div>
+
+
+  <nav class="bottom-nav" id="bottomNavSlot"></nav>
+
+
+  <script src="js/nav.js"></script>
+
+  <script src="js/app.js"></script>
+
+
+  <script>
+
+    async function loadLessons() {
+
+      const res = await fetch('data/lessons.json');
+
+      const data = await res.json();
+
+      return data.lessons;
+
+    }
+
+
+    function lessonProgress(lesson) {
+
+      const p = getProgress();
+
+      const hanziList = lessonHanziList(lesson);
+
+      const known = hanziList.filter(h => p.known[h]).length;
+
+      return { known, total: hanziList.length };
+
+    }
+
+
+    async function init() {
+
+      const lessons = await loadLessons();
+
+      const byLevel = {};
+
+      lessons.forEach(l => {
+        (byLevel[l.level] = byLevel[l.level] || []).push(l);
+      });
+
+
+      const wrap = document.getElementById('lessonsWrap');
+
+
+      wrap.innerHTML = Object.keys(byLevel).map(level => `
+
+        <!-- CHỈ THÊM id để nút có thể scroll tới -->
+        <div
+          id="level-${level}"
+          style="margin-bottom:36px; scroll-margin-top:20px;"
+        >
+
+          <h2 style="font-size:18px; margin-bottom:16px;">
+            ${LEVEL_LABEL[level] || level}
+          </h2>
+
+
+          <div class="lesson-grid">
+
+            ${byLevel[level].map(l => {
+
+        const prog = lessonProgress(l);
+
+        return `
+
+                <a class="lesson-card" href="lesson.html?id=${l.id}">
+
+                  <div class="num-badge">
+                    Bài ${l.number}
+                  </div>
+
+                  <div class="icon">
+                    ${l.icon}
+                  </div>
+
+                  <h3>
+                    ${l.title_vi}
+                  </h3>
+
+                  <div class="cn-title">
+                    ${l.title_cn}
+                  </div>
+
+                  <div class="meta">
+
+                    <span>
+                      📖 ${l.vocab.length} từ mới
+                    </span>
+
+                    <span>
+                      💬 ${l.dialogue.length} câu hội thoại
+                    </span>
+
+                  </div>
+
+
+                  <div
+                    class="bar-track"
+                    style="
+                      margin-top:10px;
+                      background:var(--paper-alt);
+                    "
+                  >
+
+                    <div
+                      class="bar-fill"
+                      style="
+                        width:${l.vocab.length
+            ? Math.round(prog.known / l.vocab.length * 100)
+            : 0}%;
+                        background:var(--jade);
+                      "
+                    ></div>
+
+                  </div>
+
+                </a>
+
+              `;
+
+      }).join('')}
+
+          </div>
+
+        </div>
+
+      `).join('') + `
+
+        <div class="callout" style="max-width:640px;">
+
+          <strong>HSK1 đã hoàn thành!</strong>
+          22 bài học phủ 100% từ vựng HSK1 (506/506 từ).
+
+          Ngoài ra còn có mục
+          <strong>Chuyên ngành: CNTT & Sản xuất</strong>
+          ở trên.
+
+          Tiếp theo sẽ là các bài học HSK2 và HSK3 —
+          đang được biên soạn dần.
+
+        </div>
+
+      `;
+
+
+      /* =========================
+         THÊM: XỬ LÝ NÚT HSK
+      ========================= */
+
+      const levelButtons = document.querySelectorAll('.level-quick-btn');
+
+      levelButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+          const level = button.dataset.level;
+          console.log(`Đang scroll tới ${level}...`);
+          const target = document.getElementById(`level-${level}`);
+
+
+          // Nếu level chưa có bài trong lessons.json
+          if (!target) {
+
+            alert(`${level} hiện chưa có bài học.`);
+
+            return;
+
+          }
+
+
+          // Scroll mượt tới level
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+
+          // Đổi trạng thái active
+          levelButtons.forEach(btn => {
+            btn.classList.remove('active');
+          });
+
+          button.classList.add('active');
+
+        });
+
+      });
+      /* =========================
+   FLOATING LEVEL BUTTON
+========================= */
+
+      const levelQuickNav = document.querySelector('.level-quick-nav');
+
+      const floatingLevel = document.getElementById('floatingLevel');
+
+      const floatingLevelBtn = document.getElementById('floatingLevelBtn');
+
+      const floatingLevelMenu = document.getElementById('floatingLevelMenu');
+
+
+      // Theo dõi thanh HSK phía trên
+      const observer = new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            // Nếu thanh HSK không còn nhìn thấy
+            if (!entry.isIntersecting) {
+
+              floatingLevel.classList.add('show');
+
+            } else {
+
+              floatingLevel.classList.remove('show');
+
+              floatingLevelMenu.classList.remove('open');
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0
+        }
+      );
+
+
+      // Bắt đầu theo dõi
+      observer.observe(levelQuickNav);
+
+
+      // Click mở menu
+      floatingLevelBtn.addEventListener('click', () => {
+
+        floatingLevelMenu.classList.toggle('open');
+
+      });
+
+
+      // Click chọn HSK
+      document.querySelectorAll('.floating-level-menu button').forEach(button => {
+
+        button.addEventListener('click', () => {
+
+          const level = button.dataset.level;
+
+          const target = document.getElementById(`level-${level}`);
+
+
+          if (!target) {
+
+            alert(`${level} hiện chưa có bài học.`);
+
+            return;
+
+          }
+
+
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+
+          // Đóng menu
+          floatingLevelMenu.classList.remove('open');
+
+
+          // Update nút chính phía trên
+          levelButtons.forEach(btn => {
+
+            btn.classList.toggle(
+              'active',
+              btn.dataset.level === level
+            );
+
+          });
+
+        });
+
+      });
+
+    }
+
+
+    init();
+
+  </script>
+
+</body>
+
+
+<!-- Floating Level Selector -->
+<div class="floating-level" id="floatingLevel">
+
+  <button class="floating-level-btn" id="floatingLevelBtn" type="button" title="Chọn cấp độ HSK">
+    ☰
+  </button>
+
+  <div class="floating-level-menu" id="floatingLevelMenu">
+
+    <button type="button" data-level="hsk1">
+      HSK 1
+    </button>
+
+    <button type="button" data-level="hsk2">
+      HSK 2
+    </button>
+
+    <button type="button" data-level="hsk3">
+      HSK 3
+    </button>
+
+  </div>
+
 </div>
 
-<nav class="bottom-nav" id="bottomNavSlot"></nav>
-
-<script src="js/nav.js"></script>
-<script src="js/app.js"></script>
-<script>
-async function loadLessons() {
-  const res = await fetch('data/lessons.json');
-  const data = await res.json();
-  return data.lessons;
-}
-
-function lessonProgress(lesson) {
-  const p = getProgress();
-  const hanziList = lessonHanziList(lesson);
-  const known = hanziList.filter(h => p.known[h]).length;
-  return { known, total: hanziList.length };
-}
-
-async function init() {
-  const lessons = await loadLessons();
-  const byLevel = {};
-  lessons.forEach(l => { (byLevel[l.level] = byLevel[l.level] || []).push(l); });
-
-  const wrap = document.getElementById('lessonsWrap');
-  wrap.innerHTML = Object.keys(byLevel).map(level => `
-    <div style="margin-bottom:36px;">
-      <h2 style="font-size:18px; margin-bottom:16px;">${LEVEL_LABEL[level] || level}</h2>
-      <div class="lesson-grid">
-        ${byLevel[level].map(l => {
-          const prog = lessonProgress(l);
-          return `
-          <a class="lesson-card" href="lesson.html?id=${l.id}">
-            <div class="num-badge">Bài ${l.number}</div>
-            <div class="icon">${l.icon}</div>
-            <h3>${l.title_vi}</h3>
-            <div class="cn-title">${l.title_cn}</div>
-            <div class="meta">
-              <span>📖 ${l.vocab.length} từ mới</span>
-              <span>💬 ${l.dialogue.length} câu hội thoại</span>
-            </div>
-            <div class="bar-track" style="margin-top:10px; background:var(--paper-alt);">
-              <div class="bar-fill" style="width:${l.vocab.length ? Math.round(prog.known/l.vocab.length*100) : 0}%; background:var(--jade);"></div>
-            </div>
-          </a>`;
-        }).join('')}
-      </div>
-    </div>
-  `).join('') + `
-    <div class="callout" style="max-width:640px;">
-      <strong>HSK1 đã hoàn thành!</strong> 22 bài học phủ 100% từ vựng HSK1
-      (506/506 từ). Ngoài ra còn có mục <strong>Chuyên ngành: CNTT & Sản
-      xuất</strong> ở trên. Tiếp theo sẽ là các bài học HSK2 và HSK3 — đang
-      được biên soạn dần.
-    </div>
-  `;
-}
-init();
-</script>
-</body>
 </html>
