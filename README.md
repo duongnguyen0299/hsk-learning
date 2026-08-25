@@ -85,7 +85,9 @@ hsk-app/
 ├── writing.html         Luyện viết
 ├── progress.html        Tiến độ
 ├── css/style.css        Toàn bộ style (design token, layout, component)
-├── js/app.js            Logic dùng chung: đọc vocab, lưu tiến độ (localStorage)
+├── js/
+│   ├── nav.js            Menu điều hướng dùng chung — SỬA MENU Ở ĐÂY DUY NHẤT
+│   └── app.js            Logic dùng chung: đọc vocab, lưu tiến độ (localStorage)
 └── data/
     ├── vocab.json        Dữ liệu từ vựng HSK 1–3 (tiếng Việt + câu ví dụ)
     └── lessons.json       Dữ liệu các bài học theo giáo trình
@@ -103,3 +105,11 @@ hsk-app/
   với `"level"` là tên mục tuỳ ý (khác `hsk1/hsk2/hsk3`) và `"vocab"` là mảng
   object `{hanzi, pinyin, meaning, pos, level}` thay vì mảng chuỗi hanzi —
   ứng dụng tự nhận diện và không cần từ đó có sẵn trong `vocab.json`.
+- Sửa/thêm/bớt mục menu: chỉ cần sửa mảng `NAV_ITEMS` trong `js/nav.js` —
+  toàn bộ 10 trang sẽ tự cập nhật theo vì menu được sinh động từ file này
+  (không còn phải sửa từng trang HTML riêng lẻ nữa). Mỗi trang chỉ cần có
+  `<aside class="sidebar" id="sidebarSlot"></aside>` và
+  `<nav class="bottom-nav" id="bottomNavSlot"></nav>`, cùng thẻ
+  `<script src="js/nav.js"></script>` đặt trước `js/app.js`. Muốn đổi dòng
+  gợi ý riêng ở chân menu của từng trang, sửa thuộc tính `data-navhint`
+  trên thẻ `<body>` của trang đó.

@@ -7,27 +7,10 @@
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="lessons">
+<body data-page="lessons" data-navhint='Mỗi bài học gồm Từ mới — Hội thoại — Bài tập, giống cấu trúc giáo trình HSK truyền thống.'>
 
 <div class="app-shell">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="brand-mark">学</div>
-      <div class="brand-text"><strong>Học HSK</strong><span>TỰ HỌC TIẾNG TRUNG</span></div>
-    </div>
-    <nav class="nav">
-      <a href="index.html" data-page="home"><span class="ic">⌂</span> Trang chủ</a>
-      <a href="phonetics.html" data-page="phonetics"><span class="ic">音</span> Ngữ âm cơ bản</a>
-      <a href="measures.html" data-page="measures"><span class="ic">量</span> Lượng từ</a>
-      <a href="lessons.html" data-page="lessons"><span class="ic">课</span> Bài học</a>
-      <a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span> Flashcard</a>
-      <a href="quiz.html" data-page="quiz"><span class="ic">?</span> Trắc nghiệm</a>
-      <a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span> Gõ Pinyin</a>
-      <a href="writing.html" data-page="writing"><span class="ic">✎</span> Luyện viết</a>
-      <a href="progress.html" data-page="progress"><span class="ic">◔</span> Tiến độ</a>
-    </nav>
-    <div class="sidebar-foot">Mỗi bài học gồm Từ mới — Hội thoại — Bài tập, giống cấu trúc giáo trình HSK truyền thống.</div>
-  </aside>
+  <aside class="sidebar" id="sidebarSlot"></aside>
 
   <main class="main">
     <div class="page-head">
@@ -42,20 +25,9 @@
   </main>
 </div>
 
-<nav class="bottom-nav">
-  <ul>
-    <li><a href="index.html" data-page="home"><span class="ic">⌂</span>Trang chủ</a></li>
-    <li><a href="phonetics.html" data-page="phonetics"><span class="ic">音</span>Ngữ âm</a></li>
-    <li><a href="measures.html" data-page="measures"><span class="ic">量</span>Lượng từ</a></li>
-    <li><a href="lessons.html" data-page="lessons"><span class="ic">课</span>Bài học</a></li>
-    <li><a href="flashcards.html" data-page="flashcards"><span class="ic">▭</span>Flashcard</a></li>
-    <li><a href="quiz.html" data-page="quiz"><span class="ic">?</span>Trắc nghiệm</a></li>
-    <li><a href="pinyin.html" data-page="pinyin"><span class="ic">⌨</span>Pinyin</a></li>
-    <li><a href="writing.html" data-page="writing"><span class="ic">✎</span>Luyện viết</a></li>
-    <li><a href="progress.html" data-page="progress"><span class="ic">◔</span>Tiến độ</a></li>
-  </ul>
-</nav>
+<nav class="bottom-nav" id="bottomNavSlot"></nav>
 
+<script src="js/nav.js"></script>
 <script src="js/app.js"></script>
 <script>
 async function loadLessons() {
